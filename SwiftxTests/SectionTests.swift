@@ -7,7 +7,7 @@
 //
 
 import XCTest
-import swiftz_core
+import Swiftx
 
 class SectionTests: XCTestCase {
 	func testShiftRightSections() {
