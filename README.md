@@ -4,7 +4,7 @@ Swiftx
 ======
 
 Swiftx is a Swift library containing functional abstractions and extensions to
-the Swift Standard Library.  Swiftz Core is a smaller and simpler way to introduce pure functional 
+the Swift Standard Library.  Swiftx is a smaller and simpler way to introduce pure functional 
 datatypes into any codebase.
 
 For a more full-featured library checkout [Swiftz](https://github.com/typelift/swiftz).
