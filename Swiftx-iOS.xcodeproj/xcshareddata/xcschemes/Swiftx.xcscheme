@@ -20,20 +20,6 @@
                ReferencedContainer = "container:Swiftx-iOS.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "84A88CB91A70BD82003D53CF"
-               BuildableName = "Swiftx-iOSTests.xctest"
-               BlueprintName = "Swiftx-iOSTests"
-               ReferencedContainer = "container:Swiftx-iOS.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -42,26 +28,7 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "84A88CB91A70BD82003D53CF"
-               BuildableName = "Swiftx-iOSTests.xctest"
-               BlueprintName = "Swiftx-iOSTests"
-               ReferencedContainer = "container:Swiftx-iOS.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "84A88D0F1A70BE0D003D53CF"
-            BuildableName = "Swiftx.framework"
-            BlueprintName = "Swiftx"
-            ReferencedContainer = "container:Swiftx-iOS.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </TestAction>
    <LaunchAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
