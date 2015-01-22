@@ -7,6 +7,8 @@ Swiftx is a Swift library containing functional abstractions and extensions to
 the Swift Standard Library.  Swiftz Core is a smaller and simpler way to introduce pure functional 
 datatypes into any codebase.
 
+For a more full-featured library checkout [Swiftz](https://github.com/typelift/swiftz).
+
 Setup
 -----
 
@@ -71,7 +73,7 @@ func provePEqualsNP() -> Proof<P, NP> {
 System Requirements
 ===================
 
-Swiftz and Swiftz Core support OS X 10.9+ and iOS 7.0+.
+Swiftx supports OS X 10.9+ and iOS 7.0+.
 
 License
 =======
