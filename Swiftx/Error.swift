@@ -7,10 +7,8 @@
 //
 
 /// Immediately terminates the program with an error message.
-///
-/// This currently only works in Debug mode, since the underlying assertion is optimized away in Release mode.
 public func error<A>(x : String) -> A {
-    return assert(false, x) as A
+    return fatalError(x) as A
 }
 
 /// A special case of error.
