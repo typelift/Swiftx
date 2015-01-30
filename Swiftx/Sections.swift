@@ -1565,13 +1565,13 @@ public prefix func !=(rhs: Character) -> Character -> Bool {
 }
 
 #if os(OSX)
-	public postfix func !=(lhs: Swift.Float80) -> Swift.Float80 -> Bool {
-		return { rhs in lhs != rhs }
-	}
-	
-	public prefix func !=(rhs: Swift.Float80) -> Swift.Float80 -> Bool {
-		return { lhs in lhs != rhs }
-	}
+public postfix func !=(lhs: Swift.Float80) -> Swift.Float80 -> Bool {
+	return { rhs in lhs != rhs }
+}
+
+public prefix func !=(rhs: Swift.Float80) -> Swift.Float80 -> Bool {
+	return { lhs in lhs != rhs }
+}
 #endif
 
 public postfix func !=(lhs: FloatingPointClassification) -> FloatingPointClassification -> Bool {
