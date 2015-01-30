@@ -1549,7 +1549,7 @@ public prefix func !=(rhs : Double) -> Double -> Bool {
 }
 
 public prefix func != <T : _RawOptionSetType>(rhs : T) -> T -> Bool {
-	return { rhs in lhs != rhs }
+	return { lhs in lhs != rhs }
 }
 
 public postfix func != <T : _RawOptionSetType>(lhs : T) -> T -> Bool {
@@ -1771,14 +1771,6 @@ public prefix func != <I>(rhs : ReverseRandomAccessIndex<I>) -> ReverseRandomAcc
 }
 
 public postfix func != <I>(lhs : ReverseRandomAccessIndex<I>) -> ReverseRandomAccessIndex<I> -> Bool {
-	return { rhs in lhs != rhs }
-}
-
-public prefix func != <T : _Strideable>(rhs : T) -> T -> Bool {
-	return { lhs in lhs != rhs }
-}
-
-public postfix func != <T : _Strideable>(lhs : T) -> T -> Bool {
 	return { rhs in lhs != rhs }
 }
 
