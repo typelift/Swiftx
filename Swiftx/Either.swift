@@ -51,7 +51,7 @@ public enum Either<L, R> {
 
 	/// Case analysis for the Either type. If the value is Left(a), apply the first function to a;
 	/// if it is Right(b), apply the second function to b.
-	public func either<A>(onL: L -> A, onR: R -> A) -> A {
+	public func either<A>(#onL: L -> A, onR: R -> A) -> A {
 		switch self {
 		case let Left(e):
 			return onL(e.value)
