@@ -182,6 +182,13 @@ class SectionTests: XCTestCase {
 		XCTAssertTrue(s.map(==5) == t, "")
 	}
 	
+	func testDisequalitySections() {
+		let s = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+		let t = s.map({ x in x != 5 })
+		
+		XCTAssertTrue(s.map(!=5) == t, "")
+	}
+	
 	func testReferenceEqualitySections() {
 		let x = Box()
 		let y = Box()
