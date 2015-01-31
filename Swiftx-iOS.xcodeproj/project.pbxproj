@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8480AB351A7B231D00C6162D /* Swiftx.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84A88D101A70BE0D003D53CF /* Swiftx.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		84A88D311A70BF47003D53CF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84A88D2F1A70BF47003D53CF /* Info.plist */; };
 		84A88D391A70BF81003D53CF /* SectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A88D301A70BF47003D53CF /* SectionTests.swift */; };
 		84A88D3A1A70BF85003D53CF /* Swiftx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A88D101A70BE0D003D53CF /* Swiftx.framework */; };
@@ -22,6 +23,19 @@
 		84A88D441A70BF9D003D53CF /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A88CD41A70BDB6003D53CF /* Optional.swift */; };
 		84A88D461A70C017003D53CF /* Swiftx.h in Headers */ = {isa = PBXBuildFile; fileRef = 84A88D051A70BDD6003D53CF /* Swiftx.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8480AB341A7B231200C6162D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8480AB351A7B231D00C6162D /* Swiftx.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		84A88CBA1A70BD82003D53CF /* Swiftx-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Swiftx-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -160,6 +174,7 @@
 				84A88CB61A70BD82003D53CF /* Sources */,
 				84A88CB71A70BD82003D53CF /* Frameworks */,
 				84A88CB81A70BD82003D53CF /* Resources */,
+				8480AB341A7B231200C6162D /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -450,6 +465,7 @@
 				84A88D251A70BE0D003D53CF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
