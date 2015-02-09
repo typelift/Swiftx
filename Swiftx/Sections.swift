@@ -232,10 +232,6 @@ public postfix func &% <T : _IntegerArithmeticType>(lhs : T) -> T -> T {
 prefix operator && {}
 postfix operator && {}
 
-public prefix func && <T : BooleanType>(rhs : @autoclosure () -> Bool) -> T -> Bool {
-	return { lhs in lhs && rhs }
-}
-
 public postfix func && <T : BooleanType>(lhs : T) -> Bool -> Bool {
 	return { rhs in lhs && rhs }
 }
@@ -293,14 +289,6 @@ public prefix func ^ <T : _RawOptionSetType>(b: T) -> T -> T {
 
 public postfix func ^ <T : _RawOptionSetType>(a: T) -> T -> T {
 	return { b in a ^ b }
-}
-
-public prefix func ^(rhs : Bool) -> Bool -> Bool {
-	return { lhs in lhs ^ rhs }
-}
-
-public postfix func ^(lhs : Bool) -> Bool -> Bool {
-	return { rhs in lhs ^ rhs }
 }
 
 public prefix func ^(rhs : UInt8) -> UInt8 -> UInt8 {
@@ -392,14 +380,6 @@ public prefix func | <T : _RawOptionSetType>(b: T) -> T -> T {
 
 public postfix func | <T : _RawOptionSetType>(a: T) -> T -> T {
 	return { b in a | b }
-}
-
-public prefix func |(rhs : Bool) -> Bool -> Bool {
-	return { lhs in lhs | rhs }
-}
-
-public postfix func |(lhs : Bool) -> Bool -> Bool {
-	return { rhs in lhs | rhs }
 }
 
 public prefix func |(rhs : UInt8) -> UInt8 -> UInt8 {
@@ -1218,11 +1198,19 @@ public prefix func ==(rhs : FloatingPointClassification) -> FloatingPointClassif
 	return { lhs in lhs == rhs }
 }
 
-public prefix func == <Value, Element>(lhs : HeapBuffer<Value, Element>) -> HeapBuffer<Value, Element> -> Bool {
+public prefix func ==<T : Hashable>(rhs : Set<T>) -> Set<T> -> Bool {
+	return { lhs in lhs == rhs }
+}
+
+public postfix func ==<T : Hashable>(lhs : Set<T>) -> Set<T> -> Bool {
 	return { rhs in lhs == rhs }
 }
 
-public postfix func == <Value, Element>(lhs : HeapBuffer<Value, Element>) -> HeapBuffer<Value, Element> -> Bool {
+public prefix func ==<T : Hashable>(rhs : SetIndex<T>) -> SetIndex<T> -> Bool {
+	return { lhs in lhs == rhs }
+}
+
+public postfix func ==<T : Hashable>(lhs : SetIndex<T>) -> SetIndex<T> -> Bool {
 	return { rhs in lhs == rhs }
 }
 
@@ -1582,11 +1570,19 @@ public prefix func !=(rhs : FloatingPointClassification) -> FloatingPointClassif
 	return { lhs in lhs != rhs }
 }
 
-public prefix func != <Value, Element>(lhs : HeapBuffer<Value, Element>) -> HeapBuffer<Value, Element> -> Bool {
+public prefix func !=<T : Hashable>(rhs : Set<T>) -> Set<T> -> Bool {
+	return { lhs in lhs != rhs }
+}
+
+public postfix func !=<T : Hashable>(lhs : Set<T>) -> Set<T> -> Bool {
 	return { rhs in lhs != rhs }
 }
 
-public postfix func != <Value, Element>(lhs : HeapBuffer<Value, Element>) -> HeapBuffer<Value, Element> -> Bool {
+public prefix func !=<T : Hashable>(rhs : SetIndex<T>) -> SetIndex<T> -> Bool {
+	return { lhs in lhs != rhs }
+}
+
+public postfix func !=<T : Hashable>(lhs : SetIndex<T>) -> SetIndex<T> -> Bool {
 	return { rhs in lhs != rhs }
 }
 
