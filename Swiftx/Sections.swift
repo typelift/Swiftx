@@ -2113,7 +2113,7 @@ public prefix func > <Key : Hashable, Value>(rhs : DictionaryIndex<Key, Value>) 
 	return { lhs in lhs > rhs }
 }
 
-// prefix operator < {}
+//prefix operator < {}
 postfix operator < {}
 
 public postfix func <(lhs : Int64) -> Int64 -> Bool {
@@ -2153,6 +2153,10 @@ public postfix func <(lhs : UInt64) -> UInt64 -> Bool {
 }
 
 public postfix func <(lhs : Bit) -> Bit -> Bool {
+	return { rhs in lhs < rhs }
+}
+
+public postfix func <<T : Hashable>(lhs : SetIndex<T>) -> SetIndex<T> -> Bool {
 	return { rhs in lhs < rhs }
 }
 
