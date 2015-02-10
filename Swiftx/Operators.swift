@@ -1,6 +1,6 @@
 //
 //  Operators.swift
-//  swiftz_core
+//  Swiftx
 //
 //  Created by Maxwell Swadling on 28/06/2014.
 //  Copyright (c) 2014 Maxwell Swadling. All rights reserved.

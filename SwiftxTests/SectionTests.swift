@@ -1,6 +1,6 @@
 //
 //  SectionTests.swift
-//  swiftz_core
+//  Swiftx
 //
 //  Created by Robert Widmann on 11/24/14.
 //  Copyright (c) 2014 Maxwell Swadling. All rights reserved.
