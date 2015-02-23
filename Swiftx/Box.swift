@@ -11,7 +11,9 @@
 /// Boxes are often used when the Swift compiler cannot infer the size of a struct or enum because
 /// one of its generic types is being used as a member.
 public final class Box<T> {
-	public let value : T
+	private let val : @autoclosure(escaping) () -> T
+	
+	public var value: T { return val() }
 	
 	public init(_ value : T) {
 		self.value = value
@@ -24,7 +26,7 @@ public final class Box<T> {
 }
 
 /// Fmap | Applies a function to the value of the receiver to yield a new box.
-public func <^> <T, U>(f: T -> U, x: Box<T>) -> Box<U> {
+public func <^> <T, U>(f : T -> U, x : Box<T>) -> Box<U> {
 	return x.map(f)
 }
 
