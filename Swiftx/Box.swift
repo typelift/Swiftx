@@ -13,15 +13,15 @@
 public final class Box<T> {
 	private let val : @autoclosure(escaping) () -> T
 	
-	public var value: T { return val() }
+	public var value : T { return val() }
 	
 	public init(_ value : T) {
-		self.value = value
+		self.val = value
 	}
 	
 	// Type inference fails here.  rdar://19347652
 	public func map<U>(f : T -> U) -> Box<U> {
-		return Box<U>(f(value))
+		return Box<U>(f(self.value))
 	}
 }
 
