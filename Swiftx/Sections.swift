@@ -225,6 +225,30 @@ public postfix func && <T : BooleanType>(lhs : T) -> Bool -> Bool {
 	return { rhs in lhs && rhs }
 }
 
+public prefix func &&<T : BooleanType, U : BooleanType>(@autoclosure(escaping) rhs : () -> U) -> T -> Bool {
+	return { lhs in lhs && rhs() }
+}
+
+public postfix func &&<T : BooleanType, U : BooleanType>(lhs : T) -> U -> Bool {
+	return { rhs in lhs && rhs }
+}
+
+prefix operator || {}
+postfix operator || {}
+
+public postfix func || <T : BooleanType>(lhs : T) -> Bool -> Bool {
+	return { rhs in lhs || rhs }
+}
+
+public prefix func ||<T : BooleanType, U : BooleanType>(@autoclosure(escaping) rhs : () -> U) -> T -> Bool {
+	return { lhs in lhs || rhs() }
+}
+
+public postfix func ||<T : BooleanType, U : BooleanType>(lhs : T) -> U -> Bool {
+	return { rhs in lhs || rhs }
+}
+
+
 prefix operator &* {}
 postfix operator &* {}
 
