@@ -11,11 +11,11 @@
 /// Boxes are often used when the Swift compiler cannot infer the size of a struct or enum because
 /// one of its generic types is being used as a member.
 public final class Box<T> {
-	private let val : @autoclosure(escaping) () -> T
+	private let val : () -> T
 	
 	public var value : T { return val() }
 	
-	public init(_ value : T) {
+	public init(@autoclosure(escaping) _ value : () -> T) {
 		self.val = value
 	}
 	
