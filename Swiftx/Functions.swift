@@ -7,7 +7,7 @@
 //
 
 /// The identity function.
-public func identity<A>(a: A) -> A {
+public func identity<A>(a : A) -> A {
 	return a
 }
 
