@@ -98,26 +98,6 @@ class SectionTests: XCTestCase {
 		XCTAssertTrue(s.map(5*) == t2, "")
 	}
 	
-	func testOverflowDivisionSections() {
-		let s = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-		let t = s.map({ x in x &/ 5 })
-		
-		XCTAssertTrue(s.map(&/5) == t, "")
-		
-		let t2 = s.map({ x in 5 &/ x })
-		XCTAssertTrue(s.map(5&/) == t2, "")
-	}
-	
-	func testOverflowRemainderSections() {
-		let s = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-		let t = s.map({ x in x &% 5 })
-		
-		XCTAssertTrue(s.map(&%5) == t, "")
-		
-		let t2 = s.map({ x in 5 &% x })
-		XCTAssertTrue(s.map(5&%) == t2, "")
-	}
-	
 	func testUnderflowSubtractionSections() {
 		let s = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 		let t = s.map({ x in x &- 5 })
@@ -190,9 +170,9 @@ class SectionTests: XCTestCase {
 	}
 	
 	func testReferenceEqualitySections() {
-		let x = Box()
-		let y = Box()
-		let z = Box()
+		let x = Box(5)
+		let y = Box(5)
+		let z = Box(5)
 		
 		let s = [x, y, z]
 		let t = s.map({ x in x === y })
