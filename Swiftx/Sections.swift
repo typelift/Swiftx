@@ -1126,6 +1126,14 @@ public prefix func ==(rhs : Int) -> Int -> Bool {
 	return { lhs in lhs == rhs }
 }
 
+public postfix func ==(lhs : String.UTF16View.Index) -> String.UTF16View.Index -> Bool {
+	return { rhs in lhs == rhs }
+}
+
+public prefix func ==(rhs : String.UTF16View.Index) -> String.UTF16View.Index -> Bool {
+	return { lhs in lhs == rhs }
+}
+
 public postfix func == <Base : CollectionType>(lhs : FilterCollectionViewIndex<Base>) -> FilterCollectionViewIndex<Base> -> Bool {
 	return { rhs in lhs == rhs }
 }
@@ -1309,6 +1317,14 @@ public prefix func == <T>(rhs : T?) -> _OptionalNilComparisonType -> Bool {
 }
 
 public postfix func == <T>(lhs : _OptionalNilComparisonType) -> T? -> Bool {
+	return { rhs in lhs == rhs }
+}
+
+public prefix func ==<Value, Element>(rhs : ManagedBufferPointer<Value, Element>) -> ManagedBufferPointer<Value, Element> -> Bool {
+	return { lhs in lhs == rhs }
+}
+
+public postfix func ==<Value, Element>(lhs : ManagedBufferPointer<Value, Element>) -> ManagedBufferPointer<Value, Element> -> Bool {
 	return { rhs in lhs == rhs }
 }
 
@@ -2073,6 +2089,10 @@ public prefix func >(rhs : UnicodeScalar) -> UnicodeScalar -> Bool {
 	return { lhs in lhs > rhs }
 }
 
+public prefix func >(rhs : String.UTF16View.Index) -> String.UTF16View.Index -> Bool {
+	return { lhs in lhs > rhs }
+}
+
 public prefix func >(rhs : String.UnicodeScalarView.Index) -> String.UnicodeScalarView.Index -> Bool {
 	return { lhs in lhs > rhs }
 }
@@ -2171,6 +2191,10 @@ public postfix func < <T>(lhs : UnsafeMutablePointer<T>) -> UnsafeMutablePointer
 }
 
 public postfix func <(lhs : UnicodeScalar) -> UnicodeScalar -> Bool {
+	return { rhs in lhs < rhs }
+}
+
+public postfix func <(lhs : String.UTF16View.Index) -> String.UTF16View.Index -> Bool {
 	return { rhs in lhs < rhs }
 }
 
