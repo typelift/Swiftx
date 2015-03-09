@@ -3,10 +3,12 @@
 //  Swiftx
 //
 //  Created by Robert Widmann on 12/23/14.
-//  Copyright (c) 2014 Maxwell Swadling. All rights reserved.
+//  Copyright (c) 2014 TypeLift. All rights reserved.
 //
 
 /// Immediately terminates the program with an error message.
+///
+/// TODO: Find a way to silence this warning [-wunreachable-code]
 public func error<A>(x : String) -> A {
     return fatalError(x) as! A
 }
