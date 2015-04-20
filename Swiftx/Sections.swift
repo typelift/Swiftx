@@ -1288,11 +1288,11 @@ public postfix func == <T : Equatable>(lhs : [T]) -> [T] -> Bool {
 	return { rhs in lhs == rhs }
 }
 
-public prefix func == <T : Equatable>(rhs : Slice<T>) -> Slice<T> -> Bool{
+public prefix func == <T : Equatable>(rhs : ArraySlice<T>) -> ArraySlice<T> -> Bool{
 	return { lhs in lhs == rhs }
 }
 
-public postfix func == <T : Equatable>(lhs : Slice<T>) -> Slice<T> -> Bool {
+public postfix func == <T : Equatable>(lhs : ArraySlice<T>) -> ArraySlice<T> -> Bool {
 	return { rhs in lhs == rhs }
 }
 
@@ -1668,11 +1668,11 @@ public postfix func != <T : Equatable>(lhs : [T]) -> [T] -> Bool {
 	return { rhs in lhs != rhs }
 }
 
-public prefix func != <T : Equatable>(rhs : Slice<T>) -> Slice<T> -> Bool{
+public prefix func != <T : Equatable>(rhs : ArraySlice<T>) -> ArraySlice<T> -> Bool{
 	return { lhs in lhs != rhs }
 }
 
-public postfix func != <T : Equatable>(lhs : Slice<T>) -> Slice<T> -> Bool {
+public postfix func != <T : Equatable>(lhs : ArraySlice<T>) -> ArraySlice<T> -> Bool {
 	return { rhs in lhs != rhs }
 }
 
