@@ -36,7 +36,7 @@ public enum Result<V> {
 	/// Much like the ?? operator for Optional types, takes a value and a function,
 	/// and if the Result is Error, returns the error, otherwise maps the function over
 	/// the value in Value and returns that value.
-	public func fold<B>(value: B, _ f: V -> B) -> B {
+	public func fold<B>(value: B, f: V -> B) -> B {
 		switch self {
 		case Error(_): 
 			return value
