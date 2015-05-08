@@ -1,9 +1,9 @@
 //
 //  Operators.swift
-//  swiftz_core
+//  Swiftx
 //
-//  Created by Maxwell Swadling on 28/06/2014.
-//  Copyright (c) 2014 Maxwell Swadling. All rights reserved.
+//  Created by Robert Widmann on 28/06/2014.
+//  Copyright (c) 2014 TypeLift. All rights reserved.
 //
 
 /// MARK: Combinators
