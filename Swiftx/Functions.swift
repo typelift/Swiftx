@@ -1,13 +1,13 @@
 //
 //  Functions.swift
-//  swiftz_core
+//  Swiftx
 //
 //  Created by Maxwell Swadling on 3/06/2014.
 //  Copyright (c) 2014 Maxwell Swadling. All rights reserved.
 //
 
 /// The identity function.
-public func identity<A>(a: A) -> A {
+public func identity<A>(a : A) -> A {
 	return a
 }
 

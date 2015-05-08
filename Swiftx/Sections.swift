@@ -1,6 +1,6 @@
 //
 //  Sections.swift
-//  Swiftz
+//  Swiftx
 //
 //  Created by Robert Widmann on 1/29/15.
 //  Copyright (c) 2015 TypeLift. All rights reserved.
@@ -218,27 +218,36 @@ public postfix func ..< <Pos : ForwardIndexType>(minimum: Pos) -> Pos -> Range<P
 	return { maximum in minimum..<maximum }
 }
 
-prefix operator &% {}
-postfix operator &% {}
-
-public prefix func &% <T : _IntegerArithmeticType>(rhs : T) -> T -> T {
-	return { lhs in lhs &% rhs }
-}
-
-public postfix func &% <T : _IntegerArithmeticType>(lhs : T) -> T -> T {
-	return { rhs in lhs &% rhs }
-}
-
 prefix operator && {}
 postfix operator && {}
-
-public prefix func && <T : BooleanType>(rhs : @autoclosure () -> Bool) -> T -> Bool {
-	return { lhs in lhs && rhs }
-}
 
 public postfix func && <T : BooleanType>(lhs : T) -> Bool -> Bool {
 	return { rhs in lhs && rhs }
 }
+
+public prefix func &&<T : BooleanType, U : BooleanType>(@autoclosure(escaping) rhs : () -> U) -> T -> Bool {
+	return { lhs in lhs && rhs() }
+}
+
+public postfix func &&<T : BooleanType, U : BooleanType>(lhs : T) -> U -> Bool {
+	return { rhs in lhs && rhs }
+}
+
+prefix operator || {}
+postfix operator || {}
+
+public postfix func || <T : BooleanType>(lhs : T) -> Bool -> Bool {
+	return { rhs in lhs || rhs }
+}
+
+public prefix func ||<T : BooleanType, U : BooleanType>(@autoclosure(escaping) rhs : () -> U) -> T -> Bool {
+	return { lhs in lhs || rhs() }
+}
+
+public postfix func ||<T : BooleanType, U : BooleanType>(lhs : T) -> U -> Bool {
+	return { rhs in lhs || rhs }
+}
+
 
 prefix operator &* {}
 postfix operator &* {}
@@ -273,17 +282,6 @@ public postfix func &- <T : _IntegerArithmeticType>(lhs : T) -> T -> T {
 	return { rhs in lhs &- rhs }
 }
 
-prefix operator &/ {}
-postfix operator &/ {}
-
-public prefix func &/ <T : _IntegerArithmeticType>(rhs : T) -> T -> T {
-	return { lhs in lhs &/ rhs }
-}
-
-public postfix func &/ <T : _IntegerArithmeticType>(lhs : T) -> T -> T {
-	return { rhs in lhs &/ rhs }
-}
-
 prefix operator ^ {}
 postfix operator ^ {}
 
@@ -293,14 +291,6 @@ public prefix func ^ <T : _RawOptionSetType>(b: T) -> T -> T {
 
 public postfix func ^ <T : _RawOptionSetType>(a: T) -> T -> T {
 	return { b in a ^ b }
-}
-
-public prefix func ^(rhs : Bool) -> Bool -> Bool {
-	return { lhs in lhs ^ rhs }
-}
-
-public postfix func ^(lhs : Bool) -> Bool -> Bool {
-	return { rhs in lhs ^ rhs }
 }
 
 public prefix func ^(rhs : UInt8) -> UInt8 -> UInt8 {
@@ -392,14 +382,6 @@ public prefix func | <T : _RawOptionSetType>(b: T) -> T -> T {
 
 public postfix func | <T : _RawOptionSetType>(a: T) -> T -> T {
 	return { b in a | b }
-}
-
-public prefix func |(rhs : Bool) -> Bool -> Bool {
-	return { lhs in lhs | rhs }
-}
-
-public postfix func |(lhs : Bool) -> Bool -> Bool {
-	return { rhs in lhs | rhs }
 }
 
 public prefix func |(rhs : UInt8) -> UInt8 -> UInt8 {
@@ -1144,6 +1126,14 @@ public prefix func ==(rhs : Int) -> Int -> Bool {
 	return { lhs in lhs == rhs }
 }
 
+public postfix func ==(lhs : String.UTF16View.Index) -> String.UTF16View.Index -> Bool {
+	return { rhs in lhs == rhs }
+}
+
+public prefix func ==(rhs : String.UTF16View.Index) -> String.UTF16View.Index -> Bool {
+	return { lhs in lhs == rhs }
+}
+
 public postfix func == <Base : CollectionType>(lhs : FilterCollectionViewIndex<Base>) -> FilterCollectionViewIndex<Base> -> Bool {
 	return { rhs in lhs == rhs }
 }
@@ -1218,11 +1208,19 @@ public prefix func ==(rhs : FloatingPointClassification) -> FloatingPointClassif
 	return { lhs in lhs == rhs }
 }
 
-public prefix func == <Value, Element>(lhs : HeapBuffer<Value, Element>) -> HeapBuffer<Value, Element> -> Bool {
+public prefix func ==<T : Hashable>(rhs : Set<T>) -> Set<T> -> Bool {
+	return { lhs in lhs == rhs }
+}
+
+public postfix func ==<T : Hashable>(lhs : Set<T>) -> Set<T> -> Bool {
 	return { rhs in lhs == rhs }
 }
 
-public postfix func == <Value, Element>(lhs : HeapBuffer<Value, Element>) -> HeapBuffer<Value, Element> -> Bool {
+public prefix func ==<T : Hashable>(rhs : SetIndex<T>) -> SetIndex<T> -> Bool {
+	return { lhs in lhs == rhs }
+}
+
+public postfix func ==<T : Hashable>(lhs : SetIndex<T>) -> SetIndex<T> -> Bool {
 	return { rhs in lhs == rhs }
 }
 
@@ -1290,11 +1288,11 @@ public postfix func == <T : Equatable>(lhs : [T]) -> [T] -> Bool {
 	return { rhs in lhs == rhs }
 }
 
-public prefix func == <T : Equatable>(rhs : Slice<T>) -> Slice<T> -> Bool{
+public prefix func == <T : Equatable>(rhs : ArraySlice<T>) -> ArraySlice<T> -> Bool{
 	return { lhs in lhs == rhs }
 }
 
-public postfix func == <T : Equatable>(lhs : Slice<T>) -> Slice<T> -> Bool {
+public postfix func == <T : Equatable>(lhs : ArraySlice<T>) -> ArraySlice<T> -> Bool {
 	return { rhs in lhs == rhs }
 }
 
@@ -1319,6 +1317,14 @@ public prefix func == <T>(rhs : T?) -> _OptionalNilComparisonType -> Bool {
 }
 
 public postfix func == <T>(lhs : _OptionalNilComparisonType) -> T? -> Bool {
+	return { rhs in lhs == rhs }
+}
+
+public prefix func ==<Value, Element>(rhs : ManagedBufferPointer<Value, Element>) -> ManagedBufferPointer<Value, Element> -> Bool {
+	return { lhs in lhs == rhs }
+}
+
+public postfix func ==<Value, Element>(lhs : ManagedBufferPointer<Value, Element>) -> ManagedBufferPointer<Value, Element> -> Bool {
 	return { rhs in lhs == rhs }
 }
 
@@ -1582,11 +1588,19 @@ public prefix func !=(rhs : FloatingPointClassification) -> FloatingPointClassif
 	return { lhs in lhs != rhs }
 }
 
-public prefix func != <Value, Element>(lhs : HeapBuffer<Value, Element>) -> HeapBuffer<Value, Element> -> Bool {
+public prefix func !=<T : Hashable>(rhs : Set<T>) -> Set<T> -> Bool {
+	return { lhs in lhs != rhs }
+}
+
+public postfix func !=<T : Hashable>(lhs : Set<T>) -> Set<T> -> Bool {
 	return { rhs in lhs != rhs }
 }
 
-public postfix func != <Value, Element>(lhs : HeapBuffer<Value, Element>) -> HeapBuffer<Value, Element> -> Bool {
+public prefix func !=<T : Hashable>(rhs : SetIndex<T>) -> SetIndex<T> -> Bool {
+	return { lhs in lhs != rhs }
+}
+
+public postfix func !=<T : Hashable>(lhs : SetIndex<T>) -> SetIndex<T> -> Bool {
 	return { rhs in lhs != rhs }
 }
 
@@ -1654,11 +1668,11 @@ public postfix func != <T : Equatable>(lhs : [T]) -> [T] -> Bool {
 	return { rhs in lhs != rhs }
 }
 
-public prefix func != <T : Equatable>(rhs : Slice<T>) -> Slice<T> -> Bool{
+public prefix func != <T : Equatable>(rhs : ArraySlice<T>) -> ArraySlice<T> -> Bool{
 	return { lhs in lhs != rhs }
 }
 
-public postfix func != <T : Equatable>(lhs : Slice<T>) -> Slice<T> -> Bool {
+public postfix func != <T : Equatable>(lhs : ArraySlice<T>) -> ArraySlice<T> -> Bool {
 	return { rhs in lhs != rhs }
 }
 
@@ -2075,6 +2089,10 @@ public prefix func >(rhs : UnicodeScalar) -> UnicodeScalar -> Bool {
 	return { lhs in lhs > rhs }
 }
 
+public prefix func >(rhs : String.UTF16View.Index) -> String.UTF16View.Index -> Bool {
+	return { lhs in lhs > rhs }
+}
+
 public prefix func >(rhs : String.UnicodeScalarView.Index) -> String.UnicodeScalarView.Index -> Bool {
 	return { lhs in lhs > rhs }
 }
@@ -2117,7 +2135,7 @@ public prefix func > <Key : Hashable, Value>(rhs : DictionaryIndex<Key, Value>) 
 	return { lhs in lhs > rhs }
 }
 
-// prefix operator < {}
+//prefix operator < {}
 postfix operator < {}
 
 public postfix func <(lhs : Int64) -> Int64 -> Bool {
@@ -2160,6 +2178,10 @@ public postfix func <(lhs : Bit) -> Bit -> Bool {
 	return { rhs in lhs < rhs }
 }
 
+public postfix func <<T : Hashable>(lhs : SetIndex<T>) -> SetIndex<T> -> Bool {
+	return { rhs in lhs < rhs }
+}
+
 public postfix func < <T>(lhs : UnsafePointer<T>) -> UnsafePointer<T> -> Bool {
 	return { rhs in lhs < rhs }
 }
@@ -2169,6 +2191,10 @@ public postfix func < <T>(lhs : UnsafeMutablePointer<T>) -> UnsafeMutablePointer
 }
 
 public postfix func <(lhs : UnicodeScalar) -> UnicodeScalar -> Bool {
+	return { rhs in lhs < rhs }
+}
+
+public postfix func <(lhs : String.UTF16View.Index) -> String.UTF16View.Index -> Bool {
 	return { rhs in lhs < rhs }
 }
 
