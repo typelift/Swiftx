@@ -10,7 +10,7 @@
 ///
 /// TODO: Find a way to silence this warning [-wunreachable-code]
 public func error<A>(x : String) -> A {
-    return fatalError(x) as! A
+    fatalError(x)
 }
 
 /// A special case of error.
