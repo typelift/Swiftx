@@ -602,7 +602,7 @@
 				);
 				INFOPLIST_FILE = Swiftx/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = Swiftx;
 				SDKROOT = iphoneos;
@@ -622,7 +622,7 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = Swiftx/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = Swiftx;
 				SDKROOT = iphoneos;
@@ -709,6 +709,7 @@
 				84DF767D1B0BDE0A00C912B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		84DF767E1B0BDE0A00C912B0 /* Build configuration list for PBXNativeTarget "Swiftx-iOSTests" */ = {
 			isa = XCConfigurationList;
@@ -717,6 +718,7 @@
 				84DF76801B0BDE0A00C912B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
