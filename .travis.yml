@@ -1,5 +1,0 @@
-language: objective-c
-
-script:
-- xctool -project Swiftx.xcodeproj -scheme Swiftx -sdk macosx ONLY_ACTIVE_ARCH=NO clean build test
-- xctool -project Swiftx-iOS.xcodeproj -scheme Swiftx -sdk iphonesimulator8.1 ONLY_ACTIVE_ARCH=NO clean build test
