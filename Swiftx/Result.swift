@@ -13,13 +13,13 @@ import typealias Foundation.NSErrorPointer
 /// only contain an NSError.
 public enum Result<V> {
 	case Error(NSError)
-	case Value(Box<V>)
+	case Value(V)
 	
 	public init(_ e: NSError?, _ v: V) {
 		if let ex = e {
 			self = Result.Error(ex)
 		} else {
-			self = Result.Value(Box(v))
+			self = Result.Value(v)
 		}
 	}
 	
@@ -27,9 +27,9 @@ public enum Result<V> {
 	public func toEither() -> Either<NSError, V> {
 		switch self {
 		case let Error(e): 
-			return .Left(Box(e))
+			return .Left(e)
 		case let Value(v): 
-			return Either.Right(Box(v.value))
+			return Either.Right(v)
 		}
 	}
 	
@@ -41,7 +41,7 @@ public enum Result<V> {
 		case Error(_): 
 			return value
 		case let Value(v): 
-			return f(v.value)
+			return f(v)
 		}
 	}
 	
@@ -59,7 +59,7 @@ public enum Result<V> {
 	
 	/// Creates a Value with the given value.
 	public static func value(v : V) -> Result<V> {
-		return .Value(Box(v))
+		return .Value(v)
 	}
 }
 
@@ -70,7 +70,7 @@ public enum Result<V> {
 public func from<A>(fn : (NSErrorPointer) -> A) -> Result<A> {
 	var err : NSError? = nil
 	let b = fn(&err)
-	return (err != nil) ? .Error(err!) : .Value(Box(b))
+	return (err != nil) ? .Error(err!) : .Value(b)
 }
 
 /// Takes a 1-ary function that can potentially raise an error and constructs a Result depending on
@@ -79,7 +79,7 @@ public func from<A, B>(fn : (A, NSErrorPointer) -> B) -> A -> Result<B> {
 	return { a in 
 		var err : NSError? = nil
 		let b = fn(a, &err)
-		return (err != nil) ? .Error(err!) : .Value(Box(b))
+		return (err != nil) ? .Error(err!) : .Value(b)
 	}
 }
 
@@ -89,7 +89,7 @@ public func from<A, B, C>(fn : (A, B, NSErrorPointer) -> C) -> A -> B -> Result<
 	return { a in { b in
 		var err : NSError? = nil
 		let c = fn(a, b, &err)
-		return (err != nil) ? .Error(err!) : .Value(Box(c))
+		return (err != nil) ? .Error(err!) : .Value(c)
 	} }
 }
 
@@ -99,7 +99,7 @@ public func from<A, B, C, D>(fn : (A, B, C, NSErrorPointer) -> D) -> A -> B -> C
 	return { a in { b in { c in
 		var err : NSError? = nil
 		let d = fn(a, b, c, &err)
-		return (err != nil) ? .Error(err!) : .Value(Box(d))
+		return (err != nil) ? .Error(err!) : .Value(d)
 	} } }
 }
 
@@ -109,7 +109,7 @@ public func from<A, B, C, D, E>(fn : (A, B, C, D, NSErrorPointer) -> E) -> A -> 
 	return { a in { b in { c in { d in
 		var err : NSError? = nil
 		let e = fn(a, b, c, d, &err)
-		return (err != nil) ? .Error(err!) : .Value(Box(e))
+		return (err != nil) ? .Error(err!) : .Value(e)
 	} } } }
 }
 
@@ -119,7 +119,7 @@ public func from<A, B, C, D, E, F>(fn : (A, B, C, D, E, NSErrorPointer) -> F) ->
 	return { a in { b in { c in { d in { e in
 		var err : NSError? = nil
 		let f = fn(a, b, c, d, e, &err)
-		return (err != nil) ? .Error(err!) : .Value(Box(f))
+		return (err != nil) ? .Error(err!) : .Value(f)
 	} } } } }
 }
 
@@ -127,35 +127,35 @@ public func from<A, B, C, D, E, F>(fn : (A, B, C, D, E, NSErrorPointer) -> F) ->
 public func !! <A, B>(fn : (A, NSErrorPointer) -> B, a : A) -> Result<B> {
 	var err : NSError? = nil
 	let b = fn(a, &err)
-	return (err != nil) ? .Error(err!) : .Value(Box(b))
+	return (err != nil) ? .Error(err!) : .Value(b)
 }
 
 /// Infix 2-ary from
 public func !! <A, B, C>(fn : (A, B, NSErrorPointer) -> C, t : (A, B)) -> Result<C> {
 	var err : NSError? = nil
 	let c = fn(t.0, t.1, &err)
-	return (err != nil) ? .Error(err!) : .Value(Box(c))
+	return (err != nil) ? .Error(err!) : .Value(c)
 }
 
 /// Infix 3-ary from
 public func !! <A, B, C, D>(fn : (A, B, C, NSErrorPointer) -> D, t : (A, B, C)) -> Result<D> {
 	var err : NSError? = nil
 	let d = fn(t.0, t.1, t.2, &err)
-	return (err != nil) ? .Error(err!) : .Value(Box(d))
+	return (err != nil) ? .Error(err!) : .Value(d)
 }
 
 /// Infix 4-ary from
 public func !! <A, B, C, D, E>(fn : (A, B, C, D, NSErrorPointer) -> E, t : (A, B, C, D)) -> Result<E> {
 	var err : NSError? = nil
 	let e = fn(t.0, t.1, t.2, t.3, &err)
-	return (err != nil) ? .Error(err!) : .Value(Box(e))
+	return (err != nil) ? .Error(err!) : .Value(e)
 }
 
 /// Infix 5-ary from
 public func !! <A, B, C, D, E, F>(fn : (A, B, C, D, E, NSErrorPointer) -> F, t : (A, B, C, D, E)) -> Result<F> {
 	var err : NSError? = nil
 	let f = fn(t.0, t.1, t.2, t.3, t.4, &err)
-	return (err != nil) ? .Error(err!) : .Value(Box(f))
+	return (err != nil) ? .Error(err!) : .Value(f)
 }
 
 /// MARK: Equatable
@@ -164,7 +164,7 @@ public func == <V: Equatable>(lhs : Result<V>, rhs: Result<V>) -> Bool {
 	switch (lhs, rhs) {
 	case let (.Error(l), .Error(r)) where l == r: 
 		return true
-	case let (.Value(l), .Value(r)) where l.value == r.value: 
+	case let (.Value(l), .Value(r)) where l == r:
 		return true
 	default: 
 		return false
@@ -179,18 +179,18 @@ public func != <V: Equatable>(lhs : Result<V>, rhs: Result<V>) -> Bool {
 
 /// Applicative `pure` function, lifts a value into a Value.
 public func pure<V>(a : V) -> Result<V> {
-	return .Value(Box(a))
+	return .Value(a)
 }
 
 /// Functor `fmap`. If the Result is Error, ignores the function and returns the Error.
 /// If the Result is Value, applies the function to the Right value and returns the result
 /// in a new Value.
-public func <^> <VA, VB>(f : VA -> VB, a: Result<VA>) -> Result<VB> {
+public func <^> <VA, VB>(f : VA -> VB, a : Result<VA>) -> Result<VB> {
 	switch a {
 	case let .Error(l): 
 		return .Error(l)
 	case let .Value(r): 
-		return Result.Value(Box(f(r.value)))
+		return Result.Value(f(r))
 	}
 }
 
@@ -198,25 +198,25 @@ public func <^> <VA, VB>(f : VA -> VB, a: Result<VA>) -> Result<VB> {
 /// returns a Result<VB>. If the `f` or `a' param is an Error, simply returns an Error with the
 /// same value. Otherwise the function taken from Value(f) is applied to the value from Value(a)
 /// And a Value is returned.
-public func <*> <VA, VB>(f : Result<VA -> VB>, a: Result<VA>) -> Result<VB> {
+public func <*> <VA, VB>(f : Result<VA -> VB>, a : Result<VA>) -> Result<VB> {
 	switch (a, f) {
 	case let (.Error(l), _): 
 		return .Error(l)
 	case let (.Value(_), .Error(m)): 
 		return .Error(m)
 	case let (.Value(r), .Value(g)): 
-		return Result<VB>.Value(Box(g.value(r.value)))
+		return Result<VB>.Value(g(r))
 	}
 }
 
 /// Monadic `bind`. Given an Result<VA>, and a function from VA -> Result<VB>,
 /// applies the function `f` if `a` is Value, otherwise the function is ignored and an Error
 /// with the Error value from `a` is returned.
-public func >>- <VA, VB>(a : Result<VA>, f: VA -> Result<VB>) -> Result<VB> {
+public func >>- <VA, VB>(a : Result<VA>, f : VA -> Result<VB>) -> Result<VB> {
 	switch a {
 	case let .Error(l): 
 		return .Error(l)
 	case let .Value(r): 
-		return f(r.value)
+		return f(r)
 	}
 }
