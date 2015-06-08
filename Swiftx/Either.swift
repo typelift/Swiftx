@@ -21,7 +21,7 @@ public enum Either<L, R> {
 	/// Converts a Either to a Result, which is a more specialized type that
 	/// contains an NSError or a value.
 	public func toResult(ev : L -> NSError) -> Result<R> {
-		return either(onLeft: { e in Result.Error(ev(e)) }, onRight: { v in .Value(Box(v)) });
+		return either(onLeft : { e in Result.Error(ev(e)) }, onRight: { v in .Value(Box(v)) });
 	}
 
 
@@ -29,7 +29,7 @@ public enum Either<L, R> {
 	/// and if the Either is Left, returns the value, otherwise maps the function over
 	/// the value in Right and returns that value.
 	public func fold<B>(value : B, f : R -> B) -> B {
-		return either(onLeft: { _ in value }, onRight: { r in f(r) });
+		return either(onLeft : { _ in value }, onRight: { r in f(r) });
 	}
 
 	/// Named function for `>>-`. If the Either is Left, simply returns
@@ -51,7 +51,7 @@ public enum Either<L, R> {
 
 	/// Case analysis for the Either type. If the value is Left(a), apply the first function to a;
 	/// if it is Right(b), apply the second function to b.
-	public func either<A>(#onLeft : L -> A, onRight : R -> A) -> A {
+	public func either<A>(onLeft onLeft : L -> A, onRight : R -> A) -> A {
 		switch self {
 		case let Left(e):
 			return onLeft(e.value)
@@ -100,7 +100,7 @@ public func <*> <L, RA, RB>(f : Either<L, RA -> RB>, a : Either<L, RA>) -> Eithe
 	switch (a, f) {
 	case let (.Left(l), _):
 		return .Left(l)
-	case let (.Right(r), .Left(m)):
+	case let (.Right(_), .Left(m)):
 		return .Left(m)
 	case let (.Right(r), .Right(g)):
 		return Either<L, RB>.Right(Box(g.value(r.value)))

@@ -30,8 +30,8 @@ public func <^> <T, U>(f : T -> U, x : Box<T>) -> Box<U> {
 	return x.map(f)
 }
 
-extension Box : Printable {
+extension Box : CustomStringConvertible {
 	public var description: String {
-		return "Box(\(toString(value)))"
+		return "Box(\(String(value)))"
 	}
 }
