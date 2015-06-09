@@ -1073,6 +1073,14 @@ public postfix func ===(lhs : AnyObject?) -> AnyObject? -> Bool {
 	return { rhs in lhs === rhs }
 }
 
+public prefix func === <L : AnyCollectionType, R : AnyCollectionType>(rhs : R) -> L -> Bool {
+	return { lhs in lhs === rhs }
+}
+
+public postfix func === <L : AnyCollectionType, R : AnyCollectionType>(lhs : L) -> R -> Bool {
+	return { rhs in lhs === rhs }
+}
+
 prefix operator !== {}
 postfix operator !== {}
 
@@ -1462,6 +1470,22 @@ public prefix func == <T>(rhs : UnsafeMutablePointer<T>) -> UnsafeMutablePointer
 
 public postfix func == <T>(lhs : UnsafeMutablePointer<T>) -> UnsafeMutablePointer<T> -> Bool {
 	return { rhs in lhs == rhs }
+}
+
+public postfix func ==(lhs : AnyForwardIndex) -> AnyForwardIndex -> Bool {
+	return { rhs in lhs == rhs }
+}
+
+public prefix func ==(rhs : AnyForwardIndex) -> AnyForwardIndex -> Bool {
+	return { lhs in lhs == rhs }
+}
+
+public postfix func ==(lhs : AnyBidirectionalIndex) -> AnyBidirectionalIndex -> Bool {
+	return { rhs in lhs == rhs }
+}
+
+public prefix func ==(rhs : AnyBidirectionalIndex) -> AnyBidirectionalIndex -> Bool {
+	return { lhs in lhs == rhs }
 }
 
 prefix operator != {}
@@ -1903,6 +1927,14 @@ public postfix func <=(lhs : UInt64) -> UInt64 -> Bool {
 	return { rhs in lhs <= rhs }
 }
 
+public prefix func <=<T : Comparable>(rhs : T) -> T -> Bool {
+	return { lhs in lhs <= rhs }
+}
+
+public postfix func <=<T : Comparable>(lhs : T) -> T -> Bool {
+	return { rhs in lhs <= rhs }
+}
+
 prefix operator >= {}
 postfix operator >= {}
 
@@ -1983,6 +2015,22 @@ public prefix func >=(rhs : UInt64) -> UInt64 -> Bool {
 }
 
 public postfix func >=(lhs : UInt64) -> UInt64 -> Bool {
+	return { rhs in lhs >= rhs }
+}
+
+public prefix func >=<T : Comparable>(rhs : T?) -> T? -> Bool {
+	return { lhs in lhs >= rhs }
+}
+
+public postfix func >=<T : Comparable>(lhs : T?) -> T? -> Bool {
+	return { rhs in lhs >= rhs }
+}
+
+public prefix func >=<T : Comparable>(rhs : T) -> T -> Bool {
+	return { lhs in lhs >= rhs }
+}
+
+public postfix func >=<T : Comparable>(lhs : T) -> T -> Bool {
 	return { rhs in lhs >= rhs }
 }
 
@@ -2080,6 +2128,14 @@ public prefix func >(rhs : UInt) -> UInt -> Bool {
 }
 
 public prefix func > <Key : Hashable, Value>(rhs : DictionaryIndex<Key, Value>) -> DictionaryIndex<Key, Value> -> Bool {
+	return { lhs in lhs > rhs }
+}
+
+public prefix func > <T : Comparable>(rhs : T?) -> T? -> Bool {
+	return { lhs in lhs > rhs }
+}
+
+public prefix func > <T : Comparable>(rhs : T) -> T -> Bool {
 	return { lhs in lhs > rhs }
 }
 
@@ -2184,4 +2240,10 @@ public postfix func < <Key : Hashable, Value>(lhs : DictionaryIndex<Key, Value>)
 	return { rhs in lhs < rhs }
 }
 
+public postfix func < <T : Comparable>(lhs : T?) -> T? -> Bool {
+	return { rhs in lhs < rhs }
+}
 
+public postfix func < <T : Comparable>(lhs : T) -> T -> Bool {
+	return { rhs in lhs < rhs }
+}
