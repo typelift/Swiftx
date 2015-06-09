@@ -168,15 +168,4 @@ class SectionTests: XCTestCase {
 		
 		XCTAssertTrue(s.map(!=5) == t, "")
 	}
-	
-	func testReferenceEqualitySections() {
-		let x = Box(5)
-		let y = Box(5)
-		let z = Box(5)
-		
-		let s = [x, y, z]
-		let t = s.map({ x in x === y })
-		
-		XCTAssertTrue(s.map(===y) == t, "")
-	}
 }
