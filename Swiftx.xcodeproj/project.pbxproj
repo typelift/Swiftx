@@ -11,7 +11,6 @@
 		8480AB371A7B232A00C6162D /* Swiftx.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84A88C891A70BD71003D53CF /* Swiftx.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		84A88C951A70BD71003D53CF /* Swiftx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A88C891A70BD71003D53CF /* Swiftx.framework */; };
 		84A88CF91A70BDB9003D53CF /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A88CE91A70BDB9003D53CF /* Array.swift */; };
-		84A88CFA1A70BDB9003D53CF /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A88CEA1A70BDB9003D53CF /* Box.swift */; };
 		84A88CFB1A70BDB9003D53CF /* Either.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A88CEB1A70BDB9003D53CF /* Either.swift */; };
 		84A88CFC1A70BDB9003D53CF /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A88CEC1A70BDB9003D53CF /* Error.swift */; };
 		84A88CFD1A70BDB9003D53CF /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A88CED1A70BDB9003D53CF /* Functions.swift */; };
@@ -29,7 +28,6 @@
 		84DF76831B0BDE5400C912B0 /* Nothing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A88CEF1A70BDB9003D53CF /* Nothing.swift */; };
 		84DF76841B0BDE5400C912B0 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A88CF01A70BDB9003D53CF /* Operators.swift */; };
 		84DF76851B0BDE5400C912B0 /* Sections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A88CF31A70BDB9003D53CF /* Sections.swift */; };
-		84DF76861B0BDE5400C912B0 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A88CEA1A70BDB9003D53CF /* Box.swift */; };
 		84DF76871B0BDE5400C912B0 /* Either.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A88CEB1A70BDB9003D53CF /* Either.swift */; };
 		84DF76881B0BDE5400C912B0 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A88CF21A70BDB9003D53CF /* Result.swift */; };
 		84DF76891B0BDE5400C912B0 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A88CE91A70BDB9003D53CF /* Array.swift */; };
@@ -82,7 +80,6 @@
 		84A88C891A70BD71003D53CF /* Swiftx.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Swiftx.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84A88C941A70BD71003D53CF /* SwiftxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84A88CE91A70BDB9003D53CF /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
-		84A88CEA1A70BDB9003D53CF /* Box.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		84A88CEB1A70BDB9003D53CF /* Either.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Either.swift; sourceTree = "<group>"; usesTabs = 1; };
 		84A88CEC1A70BDB9003D53CF /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		84A88CED1A70BDB9003D53CF /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
@@ -179,7 +176,6 @@
 		84A88D2B1A70BEE0003D53CF /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				84A88CEA1A70BDB9003D53CF /* Box.swift */,
 				84A88CEB1A70BDB9003D53CF /* Either.swift */,
 				84A88CF21A70BDB9003D53CF /* Result.swift */,
 			);
@@ -315,7 +311,8 @@
 		84A88C801A70BD71003D53CF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0620;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = TypeLift;
 				TargetAttributes = {
 					84A88C881A70BD71003D53CF = {
@@ -397,7 +394,6 @@
 				84A88D031A70BDB9003D53CF /* Sections.swift in Sources */,
 				84A88CFB1A70BDB9003D53CF /* Either.swift in Sources */,
 				84A88CFD1A70BDB9003D53CF /* Functions.swift in Sources */,
-				84A88CFA1A70BDB9003D53CF /* Box.swift in Sources */,
 				84A88D011A70BDB9003D53CF /* Optional.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -418,7 +414,6 @@
 				84DF76831B0BDE5400C912B0 /* Nothing.swift in Sources */,
 				84DF76841B0BDE5400C912B0 /* Operators.swift in Sources */,
 				84DF76851B0BDE5400C912B0 /* Sections.swift in Sources */,
-				84DF76861B0BDE5400C912B0 /* Box.swift in Sources */,
 				84DF76871B0BDE5400C912B0 /* Either.swift in Sources */,
 				84DF76881B0BDE5400C912B0 /* Result.swift in Sources */,
 				84DF76891B0BDE5400C912B0 /* Array.swift in Sources */,
@@ -471,6 +466,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -544,6 +540,7 @@
 				INFOPLIST_FILE = Swiftx/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.typelift.(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -561,6 +558,7 @@
 				INFOPLIST_FILE = Swiftx/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.typelift.(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -580,6 +578,7 @@
 				);
 				INFOPLIST_FILE = SwiftxTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.maxs.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -594,6 +593,7 @@
 				);
 				INFOPLIST_FILE = SwiftxTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.maxs.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -616,6 +616,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.typelift.(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Swiftx;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -636,6 +637,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.typelift.(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Swiftx;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -661,6 +663,7 @@
 				INFOPLIST_FILE = SwiftxTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.maxs.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 			};
@@ -678,6 +681,7 @@
 				INFOPLIST_FILE = SwiftxTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.maxs.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
