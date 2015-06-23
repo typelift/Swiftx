@@ -177,11 +177,6 @@ public func != <V: Equatable>(lhs : Result<V>, rhs: Result<V>) -> Bool {
 
 /// MARK: Functor, Applicative, Monad
 
-/// Applicative `pure` function, lifts a value into a Value.
-public func pure<V>(a : V) -> Result<V> {
-	return .Value(a)
-}
-
 /// Functor `fmap`. If the Result is Error, ignores the function and returns the Error.
 /// If the Result is Value, applies the function to the Right value and returns the result
 /// in a new Value.
