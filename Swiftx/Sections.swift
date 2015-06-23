@@ -285,14 +285,6 @@ public postfix func &- <T : _IntegerArithmeticType>(lhs : T) -> T -> T {
 prefix operator ^ {}
 postfix operator ^ {}
 
-public prefix func ^ <T : _RawOptionSetType>(b : T) -> T -> T {
-	return { a in a ^ b }
-}
-
-public postfix func ^ <T : _RawOptionSetType>(a : T) -> T -> T {
-	return { b in a ^ b }
-}
-
 public prefix func ^(rhs : UInt8) -> UInt8 -> UInt8 {
 	return { lhs in lhs ^ rhs }
 }
@@ -375,14 +367,6 @@ public postfix func ^(lhs : UInt32) -> UInt32 -> UInt32 {
 
 prefix operator | {}
 postfix operator | {}
-
-public prefix func | <T : _RawOptionSetType>(b : T) -> T -> T {
-	return { a in a | b }
-}
-
-public postfix func | <T : _RawOptionSetType>(a : T) -> T -> T {
-	return { b in a | b }
-}
 
 public prefix func |(rhs : UInt8) -> UInt8 -> UInt8 {
 	return { lhs in lhs | rhs }
@@ -1182,11 +1166,11 @@ public prefix func ==(rhs : Double) -> Double -> Bool {
 	return { lhs in lhs == rhs }
 }
 
-public prefix func == <T : _RawOptionSetType>(rhs : T) -> T -> Bool {
+public prefix func == <T : RawRepresentable where T.RawValue : Equatable>(rhs : T) -> T -> Bool {
 	return { lhs in lhs == rhs }
 }
 
-public postfix func == <T : _RawOptionSetType>(lhs : T) -> T -> Bool {
+public postfix func == <T : RawRepresentable where T.RawValue : Equatable>(lhs : T) -> T -> Bool {
 	return { rhs in lhs == rhs }
 }
 
@@ -1570,11 +1554,11 @@ public prefix func !=(rhs : Double) -> Double -> Bool {
 	return { lhs in lhs != rhs }
 }
 
-public prefix func != <T : _RawOptionSetType>(rhs : T) -> T -> Bool {
+public prefix func != <T : RawRepresentable where T.RawValue : Equatable>(rhs : T) -> T -> Bool {
 	return { lhs in lhs != rhs }
 }
 
-public postfix func != <T : _RawOptionSetType>(lhs : T) -> T -> Bool {
+public postfix func != <T : RawRepresentable where T.RawValue : Equatable>(lhs : T) -> T -> Bool {
 	return { rhs in lhs != rhs }
 }
 
