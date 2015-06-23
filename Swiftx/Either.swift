@@ -109,6 +109,7 @@ public func >>- <L, RA, RB>(a : Either<L, RA>, f : RA -> Either<L, RB>) -> Eithe
 }
 
 /// MARK : Equatable
+
 public func == <L : Equatable, R : Equatable>(lhs : Either<L, R>, rhs : Either<L, R>) -> Bool {
 	switch (lhs, rhs) {
 	case let (.Left(l), .Left(r)) where l == r:
