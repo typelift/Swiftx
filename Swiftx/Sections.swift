@@ -1126,11 +1126,11 @@ public prefix func ==(rhs : String.UTF16View.Index) -> String.UTF16View.Index ->
 	return { lhs in lhs == rhs }
 }
 
-public postfix func == <Base : CollectionType>(lhs : FilterCollectionViewIndex<Base>) -> FilterCollectionViewIndex<Base> -> Bool {
+public postfix func == <Base : CollectionType>(lhs : FilterCollectionIndex<Base>) -> FilterCollectionIndex<Base> -> Bool {
 	return { rhs in lhs == rhs }
 }
 
-public prefix func == <Base : CollectionType>(rhs : FilterCollectionViewIndex<Base>) -> FilterCollectionViewIndex<Base> -> Bool {
+public prefix func == <Base : CollectionType>(rhs : FilterCollectionIndex<Base>) -> FilterCollectionIndex<Base> -> Bool {
 	return { lhs in lhs == rhs }
 }
 
@@ -1384,11 +1384,11 @@ public postfix func ==(x : ObjectIdentifier) -> ObjectIdentifier -> Bool {
 	return { y in x == y }
 }
 
-public prefix func == <I>(rhs : ReverseBidirectionalIndex<I>) -> ReverseBidirectionalIndex<I> -> Bool {
+public prefix func == <I>(rhs : ReverseIndex<I>) -> ReverseIndex<I> -> Bool {
 	return { lhs in lhs == rhs }
 }
 
-public postfix func == <I>(lhs : ReverseBidirectionalIndex<I>) -> ReverseBidirectionalIndex<I> -> Bool {
+public postfix func == <I>(lhs : ReverseIndex<I>) -> ReverseIndex<I> -> Bool {
 	return { rhs in lhs == rhs }
 }
 
@@ -1514,11 +1514,11 @@ public prefix func !=(rhs : Int) -> Int -> Bool {
 	return { lhs in lhs != rhs }
 }
 
-public postfix func != <Base : CollectionType>(lhs : FilterCollectionViewIndex<Base>) -> FilterCollectionViewIndex<Base> -> Bool {
+public postfix func != <Base : CollectionType>(lhs : FilterCollectionIndex<Base>) -> FilterCollectionIndex<Base> -> Bool {
 	return { rhs in lhs != rhs }
 }
 
-public prefix func != <Base : CollectionType>(rhs : FilterCollectionViewIndex<Base>) -> FilterCollectionViewIndex<Base> -> Bool {
+public prefix func != <Base : CollectionType>(rhs : FilterCollectionIndex<Base>) -> FilterCollectionIndex<Base> -> Bool {
 	return { lhs in lhs != rhs }
 }
 
@@ -1764,11 +1764,11 @@ public postfix func !=(lhs : ObjectIdentifier) -> ObjectIdentifier -> Bool {
 	return { rhs in lhs != rhs }
 }
 
-public prefix func != <I>(rhs : ReverseBidirectionalIndex<I>) -> ReverseBidirectionalIndex<I> -> Bool {
+public prefix func != <I>(rhs : ReverseIndex<I>) -> ReverseIndex<I> -> Bool {
 	return { lhs in lhs != rhs }
 }
 
-public postfix func != <I>(lhs : ReverseBidirectionalIndex<I>) -> ReverseBidirectionalIndex<I> -> Bool {
+public postfix func != <I>(lhs : ReverseIndex<I>) -> ReverseIndex<I> -> Bool {
 	return { rhs in lhs != rhs }
 }
 
