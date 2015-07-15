@@ -84,3 +84,11 @@ public func <| <A, B>(f : A -> B, a: A) -> B {
 public func |> <A, B>(a : A, f: A -> B) -> B {
 	return f(a)
 }
+
+/// The fixpoint (or Y) combinator computes the least fixed point of an equation. That is, the first
+/// point at which further application of x to a function is the same x.
+///
+///     x = f(x)
+public func fix<A>(f : ((A -> A) -> A -> A)) -> A -> A {
+	return { x in f(fix(f))(x) }
+}
