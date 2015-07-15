@@ -134,3 +134,8 @@ public func on<A, B, C>(o : B -> B -> C) -> (A -> B) -> A -> A -> C {
 public func on<A, B, C>(o : (B, B) -> C) -> (A -> B) -> A -> A -> C {
 	return { f in { x in { y in o(f(x), f(y)) } } }
 }
+
+/// Applies a function to an argument until a given predicate returns true.
+public func until<A>(p : A -> Bool) -> (A -> A) -> A -> A {
+	return { f in { x in p(x) ? x : until(p)(f)(f(x)) } }
+}
