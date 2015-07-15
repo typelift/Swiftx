@@ -17,13 +17,13 @@ public func const<A, B>(x : A) -> B -> A {
 }
 
 /// Flip a function's arguments
-public func flip<A, B, C>(f : ((A, B) -> C), b: B, a: A) -> C {
+public func flip<A, B, C>(f : ((A, B) -> C), b : B, a : A) -> C {
 	return f(a, b)
 }
 
 /// Flip a function's arguments and return a function that takes
 /// the arguments in flipped order.
-public func flip<A, B, C>(f : (A, B) -> C)(b : B, a: A) -> C {
+public func flip<A, B, C>(f : (A, B) -> C)(b : B, a : A) -> C {
 	return f(a, b)
 }
 
@@ -38,7 +38,7 @@ public func flip<A, B, C>(f : A -> B -> C) -> B -> A -> C {
 ///     f : B -> C
 ///     g : A -> B
 ///     (f • g)(x) === f(g(x)) : A -> B -> C
-public func • <A, B, C>(f : B -> C, g: A -> B) -> A -> C {
+public func • <A, B, C>(f : B -> C, g : A -> B) -> A -> C {
 	return { (a : A) -> C in
 		return f(g(a))
 	}
@@ -53,7 +53,7 @@ public func • <A, B, C>(f : B -> C, g: A -> B) -> A -> C {
 ///   f § g § h § x = f(g(h(x)))
 ///
 /// Key Chord: ⌥ + 6
-public func § <A, B>(f : A -> B, a: A) -> B {
+public func § <A, B>(f : A -> B, a : A) -> B {
 	return f(a)
 }
 
@@ -65,7 +65,7 @@ public func § <A, B>(f : A -> B, a: A) -> B {
 ///   f <| g <| h <| x  =  f (g (h x))
 ///
 /// Acts as a synonym for §.
-public func <| <A, B>(f : A -> B, a: A) -> B {
+public func <| <A, B>(f : A -> B, a : A) -> B {
 	return f(a)
 }
 
@@ -81,7 +81,7 @@ public func <| <A, B>(f : A -> B, a: A) -> B {
 ///     1 |> { $0.advancedBy($0) }
 ///       |> { $0.advancedBy($0) }
 ///       |> { $0 * $0 }
-public func |> <A, B>(a : A, f: A -> B) -> B {
+public func |> <A, B>(a : A, f : A -> B) -> B {
 	return f(a)
 }
 
