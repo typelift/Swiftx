@@ -19,7 +19,7 @@ public func <^> <A, B>(f : A -> B, a : A?) -> B? {
 /// Ap | Given an Optional<A -> B> and an Optional<A>, returns an Optional<B>. If the `f` or `a'
 /// param is None, simply returns None. Otherwise the function taken from Some(f) is applied to the 
 /// value from Some(a) and a Some is returned.
-public func <*> <A, B>(f : (A -> B)?, a: A?) -> B? {
+public func <*> <A, B>(f : (A -> B)?, a : A?) -> B? {
 	if f != nil && a != nil {
 		return (f!(a!))
 	} else {

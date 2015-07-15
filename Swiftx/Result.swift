@@ -36,7 +36,7 @@ public enum Result<V> {
 	/// Much like the ?? operator for Optional types, takes a value and a function,
 	/// and if the Result is Error, returns the error, otherwise maps the function over
 	/// the value in Value and returns that value.
-	public func fold<B>(value : B, f: V -> B) -> B {
+	public func fold<B>(value : B, f : V -> B) -> B {
 		switch self {
 		case Error(_): 
 			return value
@@ -160,7 +160,7 @@ public func !! <A, B, C, D, E, F>(fn : (A, B, C, D, E, NSErrorPointer) -> F, t :
 
 /// MARK: Equatable
 
-public func == <V: Equatable>(lhs : Result<V>, rhs: Result<V>) -> Bool {
+public func == <V : Equatable>(lhs : Result<V>, rhs : Result<V>) -> Bool {
 	switch (lhs, rhs) {
 	case let (.Error(l), .Error(r)) where l == r: 
 		return true
@@ -171,7 +171,7 @@ public func == <V: Equatable>(lhs : Result<V>, rhs: Result<V>) -> Bool {
 	}
 }
 
-public func != <V: Equatable>(lhs : Result<V>, rhs: Result<V>) -> Bool {
+public func != <V : Equatable>(lhs : Result<V>, rhs : Result<V>) -> Bool {
 	return !(lhs == rhs)
 }
 
