@@ -6,10 +6,7 @@
 //  Copyright (c) 2014 Maxwell Swadling. All rights reserved.
 //
 
-import class Foundation.NSError
-
-/// The Either type represents values with two possibilities: a value of type Either <A, B> is either
-/// Left <A> or Right <B>.
+/// The `Either` type represents values with two possibilities: `.Left(L)` or `.Right(R)`.
 ///
 /// The Either type is sometimes used to represent a value which is either correct or an error; by
 /// convention, the Left constructor is used to hold an error value and the Right constructor is
@@ -17,13 +14,6 @@ import class Foundation.NSError
 public enum Either<L, R> {
 	case Left(L)
 	case Right(R)
-
-	/// Converts a Either to a Result, which is a more specialized type that
-	/// contains an NSError or a value.
-	public func toResult(ev : L -> NSError) -> Result<R> {
-		return either(onLeft: { Result.Error(ev($0)) }, onRight: { .Value($0) });
-	}
-
 
 	/// Much like the ?? operator for Optional types, takes a value and a function,
 	/// and if the Either is Left, returns the value, otherwise maps the function over
