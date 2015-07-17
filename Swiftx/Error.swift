@@ -7,8 +7,6 @@
 //
 
 /// Immediately terminates the program with an error message.
-///
-/// TODO: Find a way to silence this warning [-wunreachable-code]
 public func error<A>(x : String) -> A {
     fatalError(x)
 }

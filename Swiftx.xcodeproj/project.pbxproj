@@ -18,7 +18,6 @@
 		84A88CFD1A70BDB9003D53CF /* Combinators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A88CED1A70BDB9003D53CF /* Combinators.swift */; };
 		84A88CFF1A70BDB9003D53CF /* Nothing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A88CEF1A70BDB9003D53CF /* Nothing.swift */; };
 		84A88D011A70BDB9003D53CF /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A88CF11A70BDB9003D53CF /* Optional.swift */; };
-		84A88D021A70BDB9003D53CF /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A88CF21A70BDB9003D53CF /* Result.swift */; };
 		84A88D031A70BDB9003D53CF /* Sections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A88CF31A70BDB9003D53CF /* Sections.swift */; };
 		84A88D081A70BDDA003D53CF /* Swiftx.h in Headers */ = {isa = PBXBuildFile; fileRef = 84A88D071A70BDDA003D53CF /* Swiftx.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		84A88D351A70BF4C003D53CF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84A88D331A70BF4C003D53CF /* Info.plist */; };
@@ -29,7 +28,6 @@
 		84DF76831B0BDE5400C912B0 /* Nothing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A88CEF1A70BDB9003D53CF /* Nothing.swift */; };
 		84DF76851B0BDE5400C912B0 /* Sections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A88CF31A70BDB9003D53CF /* Sections.swift */; };
 		84DF76871B0BDE5400C912B0 /* Either.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A88CEB1A70BDB9003D53CF /* Either.swift */; };
-		84DF76881B0BDE5400C912B0 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A88CF21A70BDB9003D53CF /* Result.swift */; };
 		84DF76891B0BDE5400C912B0 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A88CE91A70BDB9003D53CF /* Array.swift */; };
 		84DF768A1B0BDE5400C912B0 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A88CEC1A70BDB9003D53CF /* Error.swift */; };
 		84DF768B1B0BDE5400C912B0 /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A88CF11A70BDB9003D53CF /* Optional.swift */; };
@@ -87,7 +85,6 @@
 		84A88CEE1A70BDB9003D53CF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84A88CEF1A70BDB9003D53CF /* Nothing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nothing.swift; sourceTree = "<group>"; };
 		84A88CF11A70BDB9003D53CF /* Optional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Optional.swift; sourceTree = "<group>"; };
-		84A88CF21A70BDB9003D53CF /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		84A88CF31A70BDB9003D53CF /* Sections.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sections.swift; sourceTree = "<group>"; };
 		84A88D071A70BDDA003D53CF /* Swiftx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Swiftx.h; path = Swiftx/Swiftx.h; sourceTree = "<group>"; };
 		84A88D331A70BF4C003D53CF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = SwiftxTests/Info.plist; sourceTree = "<group>"; };
@@ -177,7 +174,6 @@
 			isa = PBXGroup;
 			children = (
 				84A88CEB1A70BDB9003D53CF /* Either.swift */,
-				84A88CF21A70BDB9003D53CF /* Result.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -386,7 +382,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84A88D021A70BDB9003D53CF /* Result.swift in Sources */,
 				84A88CFC1A70BDB9003D53CF /* Error.swift in Sources */,
 				84A88CFF1A70BDB9003D53CF /* Nothing.swift in Sources */,
 				84A88CF91A70BDB9003D53CF /* Array.swift in Sources */,
@@ -414,7 +409,6 @@
 				84DF76831B0BDE5400C912B0 /* Nothing.swift in Sources */,
 				84DF76851B0BDE5400C912B0 /* Sections.swift in Sources */,
 				84DF76871B0BDE5400C912B0 /* Either.swift in Sources */,
-				84DF76881B0BDE5400C912B0 /* Result.swift in Sources */,
 				84DF76891B0BDE5400C912B0 /* Array.swift in Sources */,
 				84DF768A1B0BDE5400C912B0 /* Error.swift in Sources */,
 				84DF768B1B0BDE5400C912B0 /* Optional.swift in Sources */,
