@@ -41,7 +41,7 @@ public enum Either<L, R> {
 	}
 
 	/// Determines if this Either value is a Left.
-	public func isLeft() -> Bool {
+	public var isLeft : Bool {
 		switch self {
 		case Left(_):
 			return true
@@ -51,7 +51,7 @@ public enum Either<L, R> {
 	}
 
 	/// Determines if this Either value is a Right.
-	public func isRight() -> Bool {
+	public var isRight : Bool {
 		switch self {
 		case Left(_):
 			return false
@@ -68,7 +68,7 @@ public func <^> <L, RA, RB>(f : RA -> RB, a : Either<L, RA>) -> Either<L, RB> {
 	case let .Left(l):
 		return .Left(l)
 	case let .Right(r):
-		return Either<L, RB>.Right(f(r))
+		return .Right(f(r))
 	}
 }
 
@@ -82,7 +82,7 @@ public func <*> <L, RA, RB>(f : Either<L, RA -> RB>, a : Either<L, RA>) -> Eithe
 	case let (.Right(_), .Left(m)):
 		return .Left(m)
 	case let (.Right(r), .Right(g)):
-		return Either<L, RB>.Right(g(r))
+		return .Right(g(r))
 	}
 }
 
