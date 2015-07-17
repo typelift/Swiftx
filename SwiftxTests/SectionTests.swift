@@ -8,29 +8,141 @@
 
 import XCTest
 import Swiftx
+import SwiftCheck
 
 class SectionTests: XCTestCase {
-	func testShiftRightSections() {
-		let s = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-		let t = s.map({ x in x >> 2 })
+	func testBitShiftProperties() {
+		property("") <- forAll { (x : ArrayOf<Positive<Int>>, sh : Positive<Int>) in
+			let xs = x.getArray.map { min(63, $0.getPositive) }
+			let shft = min(63, sh.getPositive)
+			return
+				xs.map(>>shft) == xs.map { x in x >> shft }
+				^&&^
+				xs.map(shft>>) == xs.map { x in shft >> x }
+		}
 		
-		XCTAssertTrue(s.map(>>2) == t, "")
-		
-		let t2 = s.map({ x in 2 >> x })
-		XCTAssertTrue(s.map(2>>) == t2, "")
+		property("") <- forAll { (x : ArrayOf<Positive<Int>>, sh : Positive<Int>) in
+			let xs = x.getArray.map { min(63, $0.getPositive) }
+			let shft = min(63, sh.getPositive)
+			return
+				xs.map(<<shft) == xs.map { x in x << shft }
+				^&&^
+				xs.map(shft<<) == xs.map { x in shft << x }
+		}
 	}
 	
-	func testShiftLeftSections() {
-		let s = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-		let t = s.map({ x in x << 2 })
+	func testArithmeticSections() {
+		property("") <- forAll { (x : ArrayOf<Int>, i : Int) in
+			let xs = x.getArray
+			return
+				xs.map(+i) == xs.map { $0 + i }
+				^&&^
+				xs.map(i+) == xs.map { i + $0 }
+		}
 		
-		XCTAssertTrue(s.map(<<2) == t, "")
+		property("") <- forAll { (x : ArrayOf<NonZero<Int>>, ix : NonZero<Int>) in
+			let xs = x.getArray.map { $0.getNonZero }
+			let i = ix.getNonZero
+			return
+				xs.map(%i) == xs.map { $0 % i }
+				^&&^
+				xs.map(i%) == xs.map { i % $0 }
+		}
 		
-		let t2 = s.map({ x in 2 << x })
-		XCTAssertTrue(s.map(2<<) == t2, "")
+		property("") <- forAll { (x : ArrayOf<Int>, i : Int) in
+			let xs = x.getArray
+			return
+				xs.map(*i) == xs.map { $0 * i }
+				^&&^
+				xs.map(i*) == xs.map { i * $0 }
+		}
+		
+		property("") <- forAll { (x : ArrayOf<Int>, i : Int) in
+			let xs = x.getArray
+			return
+				xs.map(+i) == xs.map { $0 + i }
+				^&&^
+				xs.map(i+) == xs.map { i + $0 }
+		}
+		
+		property("") <- forAll { (x : ArrayOf<Positive<Int>>, ix : NonZero<Int>) in
+			let xs = x.getArray.map { $0.getPositive }
+			let d = ix.getNonZero
+			
+			return
+				xs.map(/d) == xs.map { $0 / d }
+				^&&^
+				xs.map(d/) == xs.map { d / $0 }
+		}
+		
+		property("") <- forAll { (x : ArrayOf<NonZero<Int>>, ix : NonZero<Int>) in
+			let xs = x.getArray.map { $0.getNonZero }
+			let i = ix.getNonZero
+			return
+				xs.map(&-i) == xs.map { $0 &- i }
+				^&&^
+				xs.map(i&-) == xs.map { i &- $0 }
+		}
+		
+		property("") <- forAll { (x : ArrayOf<Int>, i : Int) in
+			let xs = x.getArray
+			return
+				xs.map(&*i) == xs.map { $0 &* i }
+				^&&^
+				xs.map(i&*) == xs.map { i &* $0 }
+		}
+		
+		property("") <- forAll { (x : ArrayOf<Int>, i : Int) in
+			let xs = x.getArray
+			return
+				xs.map(&+i) == xs.map { $0 &+ i }
+				^&&^
+				xs.map(i&+) == xs.map { i &+ $0 }
+		}
 	}
 	
-	func testClosedIntervalSections() {
+	func testLogicalSections() {
+		property("") <- forAll { (x : ArrayOf<Int>, i : Int) in
+			let xs = x.getArray
+			return
+				xs.map(^i) == xs.map { $0 ^ i }
+				^&&^
+				xs.map(i^) == xs.map { i ^ $0 }
+		}
+		
+		property("") <- forAll { (x : ArrayOf<Int>, i : Int) in
+			let xs = x.getArray
+			return
+				xs.map(|i) == xs.map { $0 | i }
+				^&&^
+				xs.map(i|) == xs.map { i | $0 }
+		}
+	}
+	
+	func testEqualitySections() {
+		property("") <- forAll { (x : ArrayOf<Int>, i : Int) in
+			let xs = x.getArray
+			return
+				xs.map(==i) == xs.map { $0 == i }
+				^&&^
+				xs.map(i==) == xs.map { i == $0 }
+		}
+		
+		property("") <- forAll { (x : ArrayOf<Int>, i : Int) in
+			let xs = x.getArray
+			return xs.map(!=i) == xs.map { $0 != i }
+		}
+	}
+
+	func testNilCoalescingSections() {
+		property("") <- forAll { (x : ArrayOf<Int>, i : Int) in
+			let xs = x.getArray.map(Optional<Int>.Some).flatMap(Optional.shrink)
+			return xs.map(??i) == xs.map { $0 ?? i }
+		}
+	}
+	
+	
+	func testIntervalProperties() {
 		let s = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 		let t = s.map({ x in x...11 })
 		
@@ -48,124 +160,5 @@ class SectionTests: XCTestCase {
 		
 		let t2 = s.map({ x in 0..<x })
 		XCTAssertTrue(s.map(0..<) == t2, "")
-	}
-	
-	
-	func testDivisionSections() {
-		let s = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-		let t = s.map({ x in x / 5 })
-		
-		XCTAssertTrue(s.map(/5) == t, "")
-		
-		let t2 = s.map({ x in 5 / x })
-		XCTAssertTrue(s.map(5/) == t2, "")
-	}
-	
-	func testRemainderSections() {
-		let s = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-		let t = s.map({ x in x % 5 })
-		
-		XCTAssertTrue(s.map(%5) == t, "")
-		
-		let t2 = s.map({ x in 5 % x })
-		XCTAssertTrue(s.map(5%) == t2, "")
-	}
-	
-	func testSubtractionSections() {
-		let s = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]		
-		let t = s.map({ x in 5 - x })
-		
-		XCTAssertTrue(s.map(5-) == t, "")
-	}
-	
-	func testAdditionSections() {
-		let s = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-		let t = s.map({ x in x + 5 })
-		
-		XCTAssertTrue(s.map(+5) == t, "")
-		
-		let t2 = s.map({ x in 5 + x })
-		XCTAssertTrue(s.map(5+) == t2, "")
-	}
-	
-	func testMultiplicationSections() {
-		let s = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-		let t = s.map({ x in x * 5 })
-		
-		XCTAssertTrue(s.map(*5) == t, "")
-		
-		let t2 = s.map({ x in 5 * x })
-		XCTAssertTrue(s.map(5*) == t2, "")
-	}
-	
-	func testUnderflowSubtractionSections() {
-		let s = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-		let t = s.map({ x in x &- 5 })
-		
-		XCTAssertTrue(s.map(&-5) == t, "")
-		
-		let t2 = s.map({ x in 5 &- x })
-		XCTAssertTrue(s.map(5&-) == t2, "")
-	}
-	
-	func testOverflowAdditionSections() {
-		let s = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-		let t = s.map({ x in x &+ 5 })
-		
-		XCTAssertTrue(s.map(&+5) == t, "")
-		
-		let t2 = s.map({ x in 5 &+ x })
-		XCTAssertTrue(s.map(5&+) == t2, "")
-	}
-	
-	func testOverflowMultiplicationSections() {
-		let s = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-		let t = s.map({ x in x &* 5 })
-		
-		XCTAssertTrue(s.map(&*5) == t, "")
-		
-		let t2 = s.map({ x in 5 &* x })
-		XCTAssertTrue(s.map(5&*) == t2, "")
-	}
-
-	func testXORSections() {
-		let s = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-		let t = s.map({ x in x ^ 5 })
-
-		XCTAssertTrue(s.map(^5) == t, "")
-		
-		let t2 = s.map({ x in 5 ^ x })
-		XCTAssertTrue(s.map(5^) == t2, "")
-	}
-	
-	func testORSections() {
-		let s = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-		let t = s.map({ x in x | 5 })
-		
-		XCTAssertTrue(s.map(|5) == t, "")
-		
-		let t2 = s.map({ x in 5 | x })
-		XCTAssertTrue(s.map(5|) == t2, "")
-	}
-	
-	func testNilCoalescingSections() {
-		let s : [Int?] = [.Some(5), nil, .Some(10), nil]
-		let t = s.map({ x in x ?? 0 })
-		
-		XCTAssertTrue(s.map(??0) == t, "")
-	}
-	
-	func testEqualitySections() {
-		let s = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-		let t = s.map({ x in x == 5 })
-		
-		XCTAssertTrue(s.map(==5) == t, "")
-	}
-	
-	func testDisequalitySections() {
-		let s = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-		let t = s.map({ x in x != 5 })
-		
-		XCTAssertTrue(s.map(!=5) == t, "")
 	}
 }
