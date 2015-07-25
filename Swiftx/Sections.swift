@@ -175,46 +175,46 @@ public postfix func <<(lhs : Int) -> Int -> Int {
 prefix operator ... {}
 postfix operator ... {}
 
-public prefix func ... <T : Comparable>(end: T) -> T -> ClosedInterval<T> {
+public prefix func ... <T : Comparable>(end : T) -> T -> ClosedInterval<T> {
 	return { start in start...end }
 }
 
-public postfix func ... <T : Comparable>(start: T) -> T -> ClosedInterval<T> {
+public postfix func ... <T : Comparable>(start : T) -> T -> ClosedInterval<T> {
 	return { end in start...end }
 }
 
-public prefix func ... <Pos : ForwardIndexType where Pos : Comparable>(end: Pos) -> Pos -> Range<Pos> {
+public prefix func ... <Pos : ForwardIndexType where Pos : Comparable>(end : Pos) -> Pos -> Range<Pos> {
 	return { start in start...end }
 }
 
-public postfix func ... <Pos : ForwardIndexType where Pos : Comparable>(start: Pos) -> Pos -> Range<Pos> {
+public postfix func ... <Pos : ForwardIndexType where Pos : Comparable>(start : Pos) -> Pos -> Range<Pos> {
 	return { end in start...end }
 }
 
-public prefix func ... <Pos : ForwardIndexType>(maximum: Pos) -> Pos -> Range<Pos> {
+public prefix func ... <Pos : ForwardIndexType>(maximum : Pos) -> Pos -> Range<Pos> {
 	return { minimum in minimum...maximum }
 }
 
-public postfix func ... <Pos : ForwardIndexType>(minimum: Pos) -> Pos -> Range<Pos> {
+public postfix func ... <Pos : ForwardIndexType>(minimum : Pos) -> Pos -> Range<Pos> {
 	return { maximum in minimum...maximum }
 }
 
 prefix operator ..< {}
 postfix operator ..< {}
 
-public prefix func ..< <Pos : ForwardIndexType where Pos : Comparable>(end: Pos) -> Pos -> Range<Pos> {
+public prefix func ..< <Pos : ForwardIndexType where Pos : Comparable>(end : Pos) -> Pos -> Range<Pos> {
 	return { start in start..<end }
 }
 
-public postfix func ..< <Pos : ForwardIndexType where Pos : Comparable>(start: Pos) -> Pos -> Range<Pos> {
+public postfix func ..< <Pos : ForwardIndexType where Pos : Comparable>(start : Pos) -> Pos -> Range<Pos> {
 	return { end in start..<end }
 }
 
-public prefix func ..< <Pos : ForwardIndexType>(maximum: Pos) -> Pos -> Range<Pos> {
+public prefix func ..< <Pos : ForwardIndexType>(maximum : Pos) -> Pos -> Range<Pos> {
 	return { minimum in minimum..<maximum }
 }
 
-public postfix func ..< <Pos : ForwardIndexType>(minimum: Pos) -> Pos -> Range<Pos> {
+public postfix func ..< <Pos : ForwardIndexType>(minimum : Pos) -> Pos -> Range<Pos> {
 	return { maximum in minimum..<maximum }
 }
 
@@ -284,14 +284,6 @@ public postfix func &- <T : _IntegerArithmeticType>(lhs : T) -> T -> T {
 
 prefix operator ^ {}
 postfix operator ^ {}
-
-public prefix func ^ <T : _RawOptionSetType>(b: T) -> T -> T {
-	return { a in a ^ b }
-}
-
-public postfix func ^ <T : _RawOptionSetType>(a: T) -> T -> T {
-	return { b in a ^ b }
-}
 
 public prefix func ^(rhs : UInt8) -> UInt8 -> UInt8 {
 	return { lhs in lhs ^ rhs }
@@ -376,14 +368,6 @@ public postfix func ^(lhs : UInt32) -> UInt32 -> UInt32 {
 prefix operator | {}
 postfix operator | {}
 
-public prefix func | <T : _RawOptionSetType>(b: T) -> T -> T {
-	return { a in a | b }
-}
-
-public postfix func | <T : _RawOptionSetType>(a: T) -> T -> T {
-	return { b in a | b }
-}
-
 public prefix func |(rhs : UInt8) -> UInt8 -> UInt8 {
 	return { lhs in lhs | rhs }
 }
@@ -466,11 +450,11 @@ public postfix func |(lhs : UInt32) -> UInt32 -> UInt32 {
 
 prefix operator ?? {}
 
-public prefix func ?? <T>(defaultValue: T) -> T? -> T {
+public prefix func ?? <T>(defaultValue : T) -> T? -> T {
 	return { optional in optional ?? defaultValue }
 }
 
-public prefix func ?? <T>(defaultValue: T?) -> T? -> T? {
+public prefix func ?? <T>(defaultValue : T?) -> T? -> T? {
 	return { optional in optional ?? defaultValue }
 }
 
@@ -1073,6 +1057,14 @@ public postfix func ===(lhs : AnyObject?) -> AnyObject? -> Bool {
 	return { rhs in lhs === rhs }
 }
 
+public prefix func === <L : AnyCollectionType, R : AnyCollectionType>(rhs : R) -> L -> Bool {
+	return { lhs in lhs === rhs }
+}
+
+public postfix func === <L : AnyCollectionType, R : AnyCollectionType>(lhs : L) -> R -> Bool {
+	return { rhs in lhs === rhs }
+}
+
 prefix operator !== {}
 postfix operator !== {}
 
@@ -1134,11 +1126,11 @@ public prefix func ==(rhs : String.UTF16View.Index) -> String.UTF16View.Index ->
 	return { lhs in lhs == rhs }
 }
 
-public postfix func == <Base : CollectionType>(lhs : FilterCollectionViewIndex<Base>) -> FilterCollectionViewIndex<Base> -> Bool {
+public postfix func == <Base : CollectionType>(lhs : FilterCollectionIndex<Base>) -> FilterCollectionIndex<Base> -> Bool {
 	return { rhs in lhs == rhs }
 }
 
-public prefix func == <Base : CollectionType>(rhs : FilterCollectionViewIndex<Base>) -> FilterCollectionViewIndex<Base> -> Bool {
+public prefix func == <Base : CollectionType>(rhs : FilterCollectionIndex<Base>) -> FilterCollectionIndex<Base> -> Bool {
 	return { lhs in lhs == rhs }
 }
 
@@ -1174,11 +1166,11 @@ public prefix func ==(rhs : Double) -> Double -> Bool {
 	return { lhs in lhs == rhs }
 }
 
-public prefix func == <T : _RawOptionSetType>(rhs : T) -> T -> Bool {
+public prefix func == <T : RawRepresentable where T.RawValue : Equatable>(rhs : T) -> T -> Bool {
 	return { lhs in lhs == rhs }
 }
 
-public postfix func == <T : _RawOptionSetType>(lhs : T) -> T -> Bool {
+public postfix func == <T : RawRepresentable where T.RawValue : Equatable>(lhs : T) -> T -> Bool {
 	return { rhs in lhs == rhs }
 }
 
@@ -1221,14 +1213,6 @@ public prefix func ==<T : Hashable>(rhs : SetIndex<T>) -> SetIndex<T> -> Bool {
 }
 
 public postfix func ==<T : Hashable>(lhs : SetIndex<T>) -> SetIndex<T> -> Bool {
-	return { rhs in lhs == rhs }
-}
-
-public prefix func == <T>(rhs : CFunctionPointer<T>) -> CFunctionPointer<T> -> Bool {
-	return { lhs in lhs == rhs }
-}
-
-public postfix func == <T>(lhs : CFunctionPointer<T>) -> CFunctionPointer<T> -> Bool {
 	return { rhs in lhs == rhs }
 }
 
@@ -1392,19 +1376,19 @@ public prefix func ==(rhs : UInt8) -> UInt8 -> Bool {
 	return { lhs in lhs == rhs }
 }
 
-public prefix func ==(y: ObjectIdentifier) -> ObjectIdentifier -> Bool {
+public prefix func ==(y : ObjectIdentifier) -> ObjectIdentifier -> Bool {
 	return { x in x == y }
 }
 
-public postfix func ==(x: ObjectIdentifier) -> ObjectIdentifier -> Bool {
+public postfix func ==(x : ObjectIdentifier) -> ObjectIdentifier -> Bool {
 	return { y in x == y }
 }
 
-public prefix func == <I>(rhs : ReverseBidirectionalIndex<I>) -> ReverseBidirectionalIndex<I> -> Bool {
+public prefix func == <I>(rhs : ReverseIndex<I>) -> ReverseIndex<I> -> Bool {
 	return { lhs in lhs == rhs }
 }
 
-public postfix func == <I>(lhs : ReverseBidirectionalIndex<I>) -> ReverseBidirectionalIndex<I> -> Bool {
+public postfix func == <I>(lhs : ReverseIndex<I>) -> ReverseIndex<I> -> Bool {
 	return { rhs in lhs == rhs }
 }
 
@@ -1416,11 +1400,11 @@ public postfix func == <I>(lhs : ReverseRandomAccessIndex<I>) -> ReverseRandomAc
 	return { rhs in lhs == rhs }
 }
 
-public prefix func == <T : _Strideable>(y: T) -> T -> Bool {
+public prefix func == <T : _Strideable>(y : T) -> T -> Bool {
 	return { x in x == y }
 }
 
-public postfix func == <T : _Strideable>(x: T) -> T -> Bool {
+public postfix func == <T : _Strideable>(x : T) -> T -> Bool {
 	return { y in x == y }
 }
 
@@ -1472,6 +1456,22 @@ public postfix func == <T>(lhs : UnsafeMutablePointer<T>) -> UnsafeMutablePointe
 	return { rhs in lhs == rhs }
 }
 
+public postfix func ==(lhs : AnyForwardIndex) -> AnyForwardIndex -> Bool {
+	return { rhs in lhs == rhs }
+}
+
+public prefix func ==(rhs : AnyForwardIndex) -> AnyForwardIndex -> Bool {
+	return { lhs in lhs == rhs }
+}
+
+public postfix func ==(lhs : AnyBidirectionalIndex) -> AnyBidirectionalIndex -> Bool {
+	return { rhs in lhs == rhs }
+}
+
+public prefix func ==(rhs : AnyBidirectionalIndex) -> AnyBidirectionalIndex -> Bool {
+	return { lhs in lhs == rhs }
+}
+
 prefix operator != {}
 postfix operator != {}
 
@@ -1514,11 +1514,11 @@ public prefix func !=(rhs : Int) -> Int -> Bool {
 	return { lhs in lhs != rhs }
 }
 
-public postfix func != <Base : CollectionType>(lhs : FilterCollectionViewIndex<Base>) -> FilterCollectionViewIndex<Base> -> Bool {
+public postfix func != <Base : CollectionType>(lhs : FilterCollectionIndex<Base>) -> FilterCollectionIndex<Base> -> Bool {
 	return { rhs in lhs != rhs }
 }
 
-public prefix func != <Base : CollectionType>(rhs : FilterCollectionViewIndex<Base>) -> FilterCollectionViewIndex<Base> -> Bool {
+public prefix func != <Base : CollectionType>(rhs : FilterCollectionIndex<Base>) -> FilterCollectionIndex<Base> -> Bool {
 	return { lhs in lhs != rhs }
 }
 
@@ -1554,11 +1554,11 @@ public prefix func !=(rhs : Double) -> Double -> Bool {
 	return { lhs in lhs != rhs }
 }
 
-public prefix func != <T : _RawOptionSetType>(rhs : T) -> T -> Bool {
+public prefix func != <T : RawRepresentable where T.RawValue : Equatable>(rhs : T) -> T -> Bool {
 	return { lhs in lhs != rhs }
 }
 
-public postfix func != <T : _RawOptionSetType>(lhs : T) -> T -> Bool {
+public postfix func != <T : RawRepresentable where T.RawValue : Equatable>(lhs : T) -> T -> Bool {
 	return { rhs in lhs != rhs }
 }
 
@@ -1601,14 +1601,6 @@ public prefix func !=<T : Hashable>(rhs : SetIndex<T>) -> SetIndex<T> -> Bool {
 }
 
 public postfix func !=<T : Hashable>(lhs : SetIndex<T>) -> SetIndex<T> -> Bool {
-	return { rhs in lhs != rhs }
-}
-
-public prefix func != <T>(rhs : CFunctionPointer<T>) -> CFunctionPointer<T> -> Bool {
-	return { lhs in lhs != rhs }
-}
-
-public postfix func != <T>(lhs : CFunctionPointer<T>) -> CFunctionPointer<T> -> Bool {
 	return { rhs in lhs != rhs }
 }
 
@@ -1772,11 +1764,11 @@ public postfix func !=(lhs : ObjectIdentifier) -> ObjectIdentifier -> Bool {
 	return { rhs in lhs != rhs }
 }
 
-public prefix func != <I>(rhs : ReverseBidirectionalIndex<I>) -> ReverseBidirectionalIndex<I> -> Bool {
+public prefix func != <I>(rhs : ReverseIndex<I>) -> ReverseIndex<I> -> Bool {
 	return { lhs in lhs != rhs }
 }
 
-public postfix func != <I>(lhs : ReverseBidirectionalIndex<I>) -> ReverseBidirectionalIndex<I> -> Bool {
+public postfix func != <I>(lhs : ReverseIndex<I>) -> ReverseIndex<I> -> Bool {
 	return { rhs in lhs != rhs }
 }
 
@@ -1855,22 +1847,6 @@ public postfix func <=(lhs : UInt8) -> UInt8 -> Bool {
 	return { rhs in lhs <= rhs }
 }
 
-public prefix func <= <T : _Comparable>(rhs : T) -> T -> Bool {
-	return { lhs in lhs <= rhs }
-}
-
-public postfix func <= <T : _Comparable>(lhs : T) -> T -> Bool {
-	return { rhs in lhs <= rhs }
-}
-
-public prefix func <= <T : _Comparable>(rhs : T?) -> T? -> Bool {
-	return { lhs in lhs <= rhs }
-}
-
-public postfix func <= <T : _Comparable>(lhs : T?) -> T? -> Bool {
-	return { rhs in lhs <= rhs }
-}
-
 public prefix func <=(rhs : Int) -> Int -> Bool {
 	return { lhs in lhs <= rhs }
 }
@@ -1935,6 +1911,14 @@ public postfix func <=(lhs : UInt64) -> UInt64 -> Bool {
 	return { rhs in lhs <= rhs }
 }
 
+public prefix func <=<T : Comparable>(rhs : T) -> T -> Bool {
+	return { lhs in lhs <= rhs }
+}
+
+public postfix func <=<T : Comparable>(lhs : T) -> T -> Bool {
+	return { rhs in lhs <= rhs }
+}
+
 prefix operator >= {}
 postfix operator >= {}
 
@@ -1951,22 +1935,6 @@ public prefix func >=(rhs : UInt8) -> UInt8 -> Bool {
 }
 
 public postfix func >=(lhs : UInt8) -> UInt8 -> Bool {
-	return { rhs in lhs >= rhs }
-}
-
-public prefix func >= <T : _Comparable>(rhs : T) -> T -> Bool {
-	return { lhs in lhs >= rhs }
-}
-
-public postfix func >= <T : _Comparable>(lhs : T) -> T -> Bool {
-	return { rhs in lhs >= rhs }
-}
-
-public prefix func >= <T : _Comparable>(rhs : T?) -> T? -> Bool {
-	return { lhs in lhs >= rhs }
-}
-
-public postfix func >= <T : _Comparable>(lhs : T?) -> T? -> Bool {
 	return { rhs in lhs >= rhs }
 }
 
@@ -2031,6 +1999,22 @@ public prefix func >=(rhs : UInt64) -> UInt64 -> Bool {
 }
 
 public postfix func >=(lhs : UInt64) -> UInt64 -> Bool {
+	return { rhs in lhs >= rhs }
+}
+
+public prefix func >=<T : Comparable>(rhs : T?) -> T? -> Bool {
+	return { lhs in lhs >= rhs }
+}
+
+public postfix func >=<T : Comparable>(lhs : T?) -> T? -> Bool {
+	return { rhs in lhs >= rhs }
+}
+
+public prefix func >=<T : Comparable>(rhs : T) -> T -> Bool {
+	return { lhs in lhs >= rhs }
+}
+
+public postfix func >=<T : Comparable>(lhs : T) -> T -> Bool {
 	return { rhs in lhs >= rhs }
 }
 
@@ -2105,10 +2089,6 @@ public prefix func >(rhs : String) -> String -> Bool {
 	return { lhs in lhs > rhs }
 }
 
-public prefix func > <T : _Comparable>(rhs : T?) -> T? -> Bool {
-	return { lhs in lhs > rhs }
-}
-
 #if os(OSX)
 public prefix func >(rhs : Swift.Float80) -> Swift.Float80 -> Bool {
 	return { lhs in lhs > rhs }
@@ -2132,6 +2112,14 @@ public prefix func >(rhs : UInt) -> UInt -> Bool {
 }
 
 public prefix func > <Key : Hashable, Value>(rhs : DictionaryIndex<Key, Value>) -> DictionaryIndex<Key, Value> -> Bool {
+	return { lhs in lhs > rhs }
+}
+
+public prefix func > <T : Comparable>(rhs : T?) -> T? -> Bool {
+	return { lhs in lhs > rhs }
+}
+
+public prefix func > <T : Comparable>(rhs : T) -> T -> Bool {
 	return { lhs in lhs > rhs }
 }
 
@@ -2210,10 +2198,6 @@ public postfix func <(lhs : String) -> String -> Bool {
 	return { rhs in lhs < rhs }
 }
 
-public postfix func < <T : _Comparable>(lhs : T?) -> T? -> Bool {
-	return { rhs in lhs < rhs }
-}
-
 #if os(OSX)
 public postfix func <(lhs : Swift.Float80) -> Swift.Float80 -> Bool {
 	return { rhs in lhs < rhs }
@@ -2240,4 +2224,10 @@ public postfix func < <Key : Hashable, Value>(lhs : DictionaryIndex<Key, Value>)
 	return { rhs in lhs < rhs }
 }
 
+public postfix func < <T : Comparable>(lhs : T?) -> T? -> Bool {
+	return { rhs in lhs < rhs }
+}
 
+public postfix func < <T : Comparable>(lhs : T) -> T -> Bool {
+	return { rhs in lhs < rhs }
+}

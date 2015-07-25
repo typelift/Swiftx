@@ -6,30 +6,20 @@
 //  Copyright (c) 2014 Maxwell Swadling. All rights reserved.
 //
 
-import class Foundation.NSError
-
-/// The Either type represents values with two possibilities: a value of type Either <A, B> is either
-/// Left <A> or Right <B>.
+/// The `Either` type represents values with two possibilities: `.Left(L)` or `.Right(R)`.
 ///
 /// The Either type is sometimes used to represent a value which is either correct or an error; by
 /// convention, the Left constructor is used to hold an error value and the Right constructor is
 /// used to hold a correct value (mnemonic: "right" also means "correct").
 public enum Either<L, R> {
-	case Left(Box<L>)
-	case Right(Box<R>)
-
-	/// Converts a Either to a Result, which is a more specialized type that
-	/// contains an NSError or a value.
-	public func toResult(ev : L -> NSError) -> Result<R> {
-		return either(onLeft: { e in Result.Error(ev(e)) }, onRight: { v in .Value(Box(v)) });
-	}
-
+	case Left(L)
+	case Right(R)
 
 	/// Much like the ?? operator for Optional types, takes a value and a function,
 	/// and if the Either is Left, returns the value, otherwise maps the function over
 	/// the value in Right and returns that value.
 	public func fold<B>(value : B, f : R -> B) -> B {
-		return either(onLeft: { _ in value }, onRight: { r in f(r) });
+		return either(onLeft: const(value), onRight: f);
 	}
 
 	/// Named function for `>>-`. If the Either is Left, simply returns
@@ -39,47 +29,36 @@ public enum Either<L, R> {
 		return self >>- f
 	}
 
-	/// Creates a Left with the given value.
-	public static func left(l : L) -> Either<L, R> {
-		return .Left(Box(l))
-	}
-
-	/// Creates a Right with the given value.
-	public static func right(r : R) -> Either<L, R> {
-		return .Right(Box(r))
-	}
-
 	/// Case analysis for the Either type. If the value is Left(a), apply the first function to a;
 	/// if it is Right(b), apply the second function to b.
-	public func either<A>(#onLeft : L -> A, onRight : R -> A) -> A {
+	public func either<A>(onLeft onLeft : L -> A, onRight : R -> A) -> A {
 		switch self {
-		case let Left(e):
-			return onLeft(e.value)
-		case let Right(e):
-			return onRight(e.value)
+		case let .Left(e):
+			return onLeft(e)
+		case let .Right(e):
+			return onRight(e)
 		}
 	}
 
 	/// Determines if this Either value is a Left.
-	public func isLeft() -> Bool {
+	public var isLeft : Bool {
 		switch self {
-		case Left(_): return true
-		case Right(_): return false
+		case Left(_):
+			return true
+		case Right(_):
+			return false
 		}
 	}
 
 	/// Determines if this Either value is a Right.
-	public func isRight() -> Bool {
+	public var isRight : Bool {
 		switch self {
-		case Left(_): return false
-		case Right(_): return true
+		case Left(_):
+			return false
+		case Right(_):
+			return true
 		}
 	}
-}
-
-/// Applicative `pure` function, lifts a value into an Right.
-public func pure<L, R>(a : R) -> Either<L, R> {
-	return .Right(Box(a))
 }
 
 /// Fmap | If the Either is Left, ignores the function and returns the Left. If the Either is Right,
@@ -89,7 +68,7 @@ public func <^> <L, RA, RB>(f : RA -> RB, a : Either<L, RA>) -> Either<L, RB> {
 	case let .Left(l):
 		return .Left(l)
 	case let .Right(r):
-		return Either<L, RB>.Right(Box(f(r.value)))
+		return .Right(f(r))
 	}
 }
 
@@ -100,10 +79,10 @@ public func <*> <L, RA, RB>(f : Either<L, RA -> RB>, a : Either<L, RA>) -> Eithe
 	switch (a, f) {
 	case let (.Left(l), _):
 		return .Left(l)
-	case let (.Right(r), .Left(m)):
+	case let (.Right(_), .Left(m)):
 		return .Left(m)
 	case let (.Right(r), .Right(g)):
-		return Either<L, RB>.Right(Box(g.value(r.value)))
+		return .Right(g(r))
 	}
 }
 
@@ -115,16 +94,17 @@ public func >>- <L, RA, RB>(a : Either<L, RA>, f : RA -> Either<L, RB>) -> Eithe
 	case let .Left(l):
 		return .Left(l)
 	case let .Right(r):
-		return f(r.value)
+		return f(r)
 	}
 }
 
 /// MARK : Equatable
+
 public func == <L : Equatable, R : Equatable>(lhs : Either<L, R>, rhs : Either<L, R>) -> Bool {
 	switch (lhs, rhs) {
-	case let (.Left(l), .Left(r)) where l.value == r.value:
+	case let (.Left(l), .Left(r)) where l == r:
 		return true
-	case let (.Right(l), .Right(r)) where l.value == r.value:
+	case let (.Right(l), .Right(r)) where l == r:
 		return true
 	default:
 		return false
