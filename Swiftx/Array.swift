@@ -15,7 +15,7 @@ public func <^> <A, B>(f : A -> B, xs : [A]) -> [B] {
 /// Ap | Returns the result of applying each element of the given array of functions to the entirety
 /// of the list of elements, repeating until the list of functions has been exhausted.
 ///
-/// Promotes function application to lists of functions applied to lists of elements.
+/// Promotes function application to arrays of functions applied to arrays of elements.
 public func <*> <A, B>(fs : [(A -> B)], xs : [A]) -> [B] {
 	return fs.flatMap(Array.map(xs))
 }
