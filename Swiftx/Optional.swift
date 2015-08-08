@@ -20,11 +20,7 @@ public func <^> <A, B>(f : A -> B, a : A?) -> B? {
 /// param is None, simply returns None. Otherwise the function taken from Some(f) is applied to the 
 /// value from Some(a) and a Some is returned.
 public func <*> <A, B>(f : (A -> B)?, a : A?) -> B? {
-	if f != nil && a != nil {
-		return (f!(a!))
-	} else {
-		return .None
-	}
+	return f.flatMap(Optional.map(a))
 }
 
 /// Bind | Given an Optional<A>, and a function from A -> Optional<B>, applies the function `f` if 
