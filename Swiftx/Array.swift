@@ -8,24 +8,18 @@
 
 /// Fmap | Maps a function over the contents of an array and returns a new array of the resulting
 /// values.
-public func <^> <A, B>(f : A -> B, a : [A]) -> [B] {
-	return a.map(f)
+public func <^> <A, B>(f : A -> B, xs : [A]) -> [B] {
+	return xs.map(f)
 }
 
-/// Ap | Given an [A -> B] and an [A], returns a [B]. Applies the function at each index in `f` to 
+/// Ap | Given an [A -> B] and an [A], returns a [B]. Applies the function at each index in `f` to
 /// every index in `a` and returns the results in a new array.
-public func <*> <A, B>(f : [(A -> B)], a : [A]) -> [B] {
-	var re = [B]()
-	for g in f {
-		for h in a {
-			re.append(g(h))
-		}
-	}
-	return re
+public func <*> <A, B>(fs : [(A -> B)], xs : [A]) -> [B] {
+	return fs.flatMap(Array.map(xs))
 }
 
 /// Bind | Given an [A], and a function from A -> [B], applies the function `f` to every element in
 /// [A] and returns the result.
-public func >>- <A, B>(a : [A], f : A -> [B]) -> [B] {
-	return a.flatMap(f)
+public func >>- <A, B>(xs : [A], f : A -> [B]) -> [B] {
+	return xs.flatMap(f)
 }
