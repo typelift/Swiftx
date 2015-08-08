@@ -21,8 +21,7 @@ public func flip<A, B, C>(f : ((A, B) -> C), b : B, a : A) -> C {
 	return f(a, b)
 }
 
-/// Flip a function's arguments and return a function that takes
-/// the arguments in flipped order.
+/// Flip a function's arguments and return a function that takes the arguments in flipped order.
 public func flip<A, B, C>(f : (A, B) -> C)(b : B, a : A) -> C {
 	return f(a, b)
 }
