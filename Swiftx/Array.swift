@@ -17,7 +17,7 @@ public func <^> <A, B>(f : A -> B, xs : [A]) -> [B] {
 ///
 /// Promotes function application to arrays of functions applied to arrays of elements.
 public func <*> <A, B>(fs : [(A -> B)], xs : [A]) -> [B] {
-	return fs.flatMap(Array.map(xs))
+	return fs.flatMap({ xs.map($0) })
 }
 
 /// Bind | Returns the result of mapping the given function over the given array of elements and

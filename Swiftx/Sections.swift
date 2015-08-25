@@ -1126,14 +1126,6 @@ public prefix func ==(rhs : String.UTF16View.Index) -> String.UTF16View.Index ->
 	return { lhs in lhs == rhs }
 }
 
-public postfix func == <Base : CollectionType>(lhs : FilterCollectionIndex<Base>) -> FilterCollectionIndex<Base> -> Bool {
-	return { rhs in lhs == rhs }
-}
-
-public prefix func == <Base : CollectionType>(rhs : FilterCollectionIndex<Base>) -> FilterCollectionIndex<Base> -> Bool {
-	return { lhs in lhs == rhs }
-}
-
 public prefix func ==(rhs : Float) -> Float -> Bool {
 	return { lhs in lhs == rhs }
 }
@@ -1511,14 +1503,6 @@ public postfix func !=(lhs : Int) -> Int -> Bool {
 }
 
 public prefix func !=(rhs : Int) -> Int -> Bool {
-	return { lhs in lhs != rhs }
-}
-
-public postfix func != <Base : CollectionType>(lhs : FilterCollectionIndex<Base>) -> FilterCollectionIndex<Base> -> Bool {
-	return { rhs in lhs != rhs }
-}
-
-public prefix func != <Base : CollectionType>(rhs : FilterCollectionIndex<Base>) -> FilterCollectionIndex<Base> -> Bool {
 	return { lhs in lhs != rhs }
 }
 
