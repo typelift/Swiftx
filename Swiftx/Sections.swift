@@ -1126,11 +1126,11 @@ public prefix func ==(rhs : String.UTF16View.Index) -> String.UTF16View.Index ->
 	return { lhs in lhs == rhs }
 }
 
-public postfix func == <Base : CollectionType>(lhs : FilterCollectionIndex<Base>) -> FilterCollectionIndex<Base> -> Bool {
+public postfix func == <Base : CollectionType>(lhs : LazyFilterIndex<Base>) -> LazyFilterIndex<Base> -> Bool {
 	return { rhs in lhs == rhs }
 }
 
-public prefix func == <Base : CollectionType>(rhs : FilterCollectionIndex<Base>) -> FilterCollectionIndex<Base> -> Bool {
+public prefix func == <Base : CollectionType>(rhs : LazyFilterIndex<Base>) -> LazyFilterIndex<Base> -> Bool {
 	return { lhs in lhs == rhs }
 }
 
@@ -1514,11 +1514,11 @@ public prefix func !=(rhs : Int) -> Int -> Bool {
 	return { lhs in lhs != rhs }
 }
 
-public postfix func != <Base : CollectionType>(lhs : FilterCollectionIndex<Base>) -> FilterCollectionIndex<Base> -> Bool {
+public postfix func != <Base : CollectionType>(lhs : LazyFilterIndex<Base>) -> LazyFilterIndex<Base> -> Bool {
 	return { rhs in lhs != rhs }
 }
 
-public prefix func != <Base : CollectionType>(rhs : FilterCollectionIndex<Base>) -> FilterCollectionIndex<Base> -> Bool {
+public prefix func != <Base : CollectionType>(rhs : LazyFilterIndex<Base>) -> LazyFilterIndex<Base> -> Bool {
 	return { lhs in lhs != rhs }
 }
 
