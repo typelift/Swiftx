@@ -17,7 +17,7 @@ extension Either where L : Arbitrary, R : Arbitrary {
 			Either.Right <^> R.arbitrary,
 		])
 	}
-	
+
 	static func shrink(e : Either<L, R>) -> [Either<L, R>] {
 		switch e {
 		case .Left(let x):
@@ -52,11 +52,11 @@ class EitherSpec : XCTestCase {
 		property("isLeft behaves") <- forAllShrink(Either<Int, Int>.arbitrary, shrinker: Either.shrink) { e in
 			return e.isLeft == e.fold(true, f: const(false))
 		}
-		
+
 		property("isRight behaves") <- forAllShrink(Either<Int, Int>.arbitrary, shrinker: Either.shrink) { e in
 			return e.isRight == e.fold(false, f: const(true))
 		}
-		
+
 		property("either is equivalent to explicit case analysis") <- forAllShrink(Either<Int, Int>.arbitrary, shrinker: Either.shrink) { e in
 			return forAll { (f : ArrowOf<Int, String>) in
 				let s : String
@@ -69,7 +69,7 @@ class EitherSpec : XCTestCase {
 				return e.either(onLeft: f.getArrow, onRight: f.getArrow) == s
 			}
 		}
-		
+
 		property("flatMap preserves .Left") <- forAllShrink(Either<String, Int>.arbitrary, shrinker: Either.shrink) { e in
 			return forAll { (f : ArrowOf<Int, UInt>) in
 				switch e {

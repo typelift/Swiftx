@@ -8,7 +8,7 @@
 
 /// Immediately terminates the program with an error message.
 public func error<A>(x : String) -> A {
-    fatalError(x)
+	fatalError(x)
 }
 
 /// A special case of error.

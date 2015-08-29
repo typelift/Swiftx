@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Maxwell Swadling. All rights reserved.
 //
 
-/// Fmap | If the Optional is `.None`, ignores the function and returns `.None`. Else if the 
+/// Fmap | If the Optional is `.None`, ignores the function and returns `.None`. Else if the
 /// Optional is `.Some`, applies the function to its value and returns the result in a new `.Some`.
 public func <^> <A, B>(f : A -> B, a : A?) -> B? {
 	return a.map(f)

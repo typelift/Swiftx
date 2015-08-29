@@ -17,8 +17,8 @@ public enum Either<L, R> {
 	case Left(L)
 	case Right(R)
 
-	/// Much like the ?? operator for Optional types, takes a value and a function, and if the 
-	/// reciever is `.Left`, returns the value, otherwise maps the function over the value in 
+	/// Much like the ?? operator for Optional types, takes a value and a function, and if the
+	/// reciever is `.Left`, returns the value, otherwise maps the function over the value in
 	/// `.Right` and returns that value.
 	public func fold<B>(value : B, f : R -> B) -> B {
 		return either(onLeft: const(value), onRight: f);
@@ -31,7 +31,7 @@ public enum Either<L, R> {
 		return self >>- f
 	}
 
-	/// Case analysis for the `Either` type. 
+	/// Case analysis for the `Either` type.
 	///
 	/// If the value is `.Left(a)`, apply the first function to `a`. If it is `.Right(b)`, apply the
 	/// second function to `b`.
@@ -65,7 +65,7 @@ public enum Either<L, R> {
 	}
 }
 
-/// Fmap | Applies a function to any non-error value contained in the given Either.  
+/// Fmap | Applies a function to any non-error value contained in the given Either.
 ///
 /// If the `Either` is `.Left`, the given function is ignored and result of this function is `.Left`.
 public func <^> <L, RA, RB>(f : RA -> RB, e : Either<L, RA>) -> Either<L, RB> {
@@ -78,11 +78,11 @@ public func <^> <L, RA, RB>(f : RA -> RB, e : Either<L, RA>) -> Either<L, RB> {
 }
 
 /// Ap | Given an `Either` containing an error value or a function, applies the function to any non-
-/// error values contained in the given either.  
+/// error values contained in the given either.
 ///
-/// If the `Either` containing the function is `.Left` the result of this function is `.Left`.  Else 
+/// If the `Either` containing the function is `.Left` the result of this function is `.Left`.  Else
 /// the result of this function is the result of `fmap`ing the function over the given Either.
-/// 
+///
 /// Promotes function application to sums of values and functions applied to sums of values.
 public func <*> <L, RA, RB>(f : Either<L, RA -> RB>, e : Either<L, RA>) -> Either<L, RB> {
 	switch (f, e) {
@@ -93,9 +93,9 @@ public func <*> <L, RA, RB>(f : Either<L, RA -> RB>, e : Either<L, RA>) -> Eithe
 	}
 }
 
-/// Bind | Applies a function to any non-error value contained in the given Either.  
+/// Bind | Applies a function to any non-error value contained in the given Either.
 ///
-/// If the `Either` is `.Left`, the given function is ignored and the result of this function is 
+/// If the `Either` is `.Left`, the given function is ignored and the result of this function is
 /// `.Left`.  Else the reuslt of this function is the application of the function to the value
 /// contained in teh Either.
 public func >>- <L, RA, RB>(a : Either<L, RA>, f : RA -> Either<L, RB>) -> Either<L, RB> {
