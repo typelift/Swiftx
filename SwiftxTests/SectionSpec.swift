@@ -17,8 +17,8 @@ class SectionTests: XCTestCase {
 			let shft = min(63, sh.getPositive)
 			return
 				xs.map(>>shft) == xs.map { x in x >> shft }
-					^&&^
-					xs.map(shft>>) == xs.map { x in shft >> x }
+				^&&^
+				xs.map(shft>>) == xs.map { x in shft >> x }
 		}
 
 		property("") <- forAll { (x : ArrayOf<Positive<Int>>, sh : Positive<Int>) in
@@ -26,8 +26,8 @@ class SectionTests: XCTestCase {
 			let shft = min(63, sh.getPositive)
 			return
 				xs.map(<<shft) == xs.map { x in x << shft }
-					^&&^
-					xs.map(shft<<) == xs.map { x in shft << x }
+				^&&^
+				xs.map(shft<<) == xs.map { x in shft << x }
 		}
 	}
 
@@ -36,8 +36,8 @@ class SectionTests: XCTestCase {
 			let xs = x.getArray
 			return
 				xs.map(+i) == xs.map { $0 + i }
-					^&&^
-					xs.map(i+) == xs.map { i + $0 }
+				^&&^
+				xs.map(i+) == xs.map { i + $0 }
 		}
 
 		property("") <- forAll { (x : ArrayOf<NonZero<Int>>, ix : NonZero<Int>) in
@@ -45,24 +45,24 @@ class SectionTests: XCTestCase {
 			let i = ix.getNonZero
 			return
 				xs.map(%i) == xs.map { $0 % i }
-					^&&^
-					xs.map(i%) == xs.map { i % $0 }
+				^&&^
+				xs.map(i%) == xs.map { i % $0 }
 		}
 
 		property("") <- forAll { (x : ArrayOf<Int>, i : Int) in
 			let xs = x.getArray
 			return
 				xs.map(*i) == xs.map { $0 * i }
-					^&&^
-					xs.map(i*) == xs.map { i * $0 }
+				^&&^
+				xs.map(i*) == xs.map { i * $0 }
 		}
 
 		property("") <- forAll { (x : ArrayOf<Int>, i : Int) in
 			let xs = x.getArray
 			return
 				xs.map(+i) == xs.map { $0 + i }
-					^&&^
-					xs.map(i+) == xs.map { i + $0 }
+				^&&^
+				xs.map(i+) == xs.map { i + $0 }
 		}
 
 		property("") <- forAll { (x : ArrayOf<Positive<Int>>, ix : NonZero<Int>) in
@@ -71,8 +71,8 @@ class SectionTests: XCTestCase {
 
 			return
 				xs.map(/d) == xs.map { $0 / d }
-					^&&^
-					xs.map(d/) == xs.map { d / $0 }
+				^&&^
+				xs.map(d/) == xs.map { d / $0 }
 		}
 
 		property("") <- forAll { (x : ArrayOf<NonZero<Int>>, ix : NonZero<Int>) in
@@ -80,24 +80,24 @@ class SectionTests: XCTestCase {
 			let i = ix.getNonZero
 			return
 				xs.map(&-i) == xs.map { $0 &- i }
-					^&&^
-					xs.map(i&-) == xs.map { i &- $0 }
+				^&&^
+				xs.map(i&-) == xs.map { i &- $0 }
 		}
 
 		property("") <- forAll { (x : ArrayOf<Int>, i : Int) in
 			let xs = x.getArray
 			return
 				xs.map(&*i) == xs.map { $0 &* i }
-					^&&^
-					xs.map(i&*) == xs.map { i &* $0 }
+				^&&^
+				xs.map(i&*) == xs.map { i &* $0 }
 		}
 
 		property("") <- forAll { (x : ArrayOf<Int>, i : Int) in
 			let xs = x.getArray
 			return
 				xs.map(&+i) == xs.map { $0 &+ i }
-					^&&^
-					xs.map(i&+) == xs.map { i &+ $0 }
+				^&&^
+				xs.map(i&+) == xs.map { i &+ $0 }
 		}
 	}
 
@@ -106,16 +106,16 @@ class SectionTests: XCTestCase {
 			let xs = x.getArray
 			return
 				xs.map(^i) == xs.map { $0 ^ i }
-					^&&^
-					xs.map(i^) == xs.map { i ^ $0 }
+				^&&^
+				xs.map(i^) == xs.map { i ^ $0 }
 		}
 
 		property("") <- forAll { (x : ArrayOf<Int>, i : Int) in
 			let xs = x.getArray
 			return
 				xs.map(|i) == xs.map { $0 | i }
-					^&&^
-					xs.map(i|) == xs.map { i | $0 }
+				^&&^
+				xs.map(i|) == xs.map { i | $0 }
 		}
 	}
 
@@ -124,8 +124,8 @@ class SectionTests: XCTestCase {
 			let xs = x.getArray
 			return
 				xs.map(==i) == xs.map { $0 == i }
-					^&&^
-					xs.map(i==) == xs.map { i == $0 }
+				^&&^
+				xs.map(i==) == xs.map { i == $0 }
 		}
 
 		property("") <- forAll { (x : ArrayOf<Int>, i : Int) in

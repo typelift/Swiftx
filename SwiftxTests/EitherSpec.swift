@@ -15,7 +15,7 @@ extension Either where L : Arbitrary, R : Arbitrary {
 		return Gen.oneOf([
 			Either.Left <^> L.arbitrary,
 			Either.Right <^> R.arbitrary,
-			])
+		])
 	}
 
 	static func shrink(e : Either<L, R>) -> [Either<L, R>] {
