@@ -88,10 +88,17 @@ public func |> <A, B>(a : A, f : A -> B) -> B {
 /// point at which further application of x to a function is the same x.
 ///
 ///     x = f(x)
-public func fix<A>(f : ((A -> A) -> A -> A)) -> A -> A {
+public func fix<A, B>(f : (A -> B) -> A -> B) -> A -> B {
 	return { x in f(fix(f))(x) }
 }
 
+/// The fixpoint (or Y) combinator computes the least fixed point of an equation. That is, the first
+/// point at which further application of x to a function is the same x.
+///
+/// `fixt` is the exception-enabled version of fix.
+public func fixt<A, B>(f : (A throws -> B) throws -> (A throws -> B)) rethrows -> A throws -> B {
+	return { x in try f(fixt(f))(x) }
+}
 /// On | Applies the function on its right to both its arguments, then applies the function on its
 /// left to the result of both prior applications.
 ///
