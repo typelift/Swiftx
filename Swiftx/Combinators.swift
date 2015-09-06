@@ -96,7 +96,7 @@ public func fix<A, B>(f : (A -> B) -> A -> B) -> A -> B {
 /// point at which further application of x to a function is the same x.
 ///
 /// `fixt` is the exception-enabled version of fix.
-public func fixt<A, B>(f : (A throws -> B) -> A throws -> B) -> A throws -> B {
+public func fixt<A, B>(f : (A throws -> B) throws -> (A throws -> B)) rethrows -> A throws -> B {
 	return { x in try f(fixt(f))(x) }
 }
 /// On | Applies the function on its right to both its arguments, then applies the function on its
