@@ -6,38 +6,26 @@
 //  Copyright (c) 2014 Maxwell Swadling. All rights reserved.
 //
 
-/// Lifts a value into an Optional.
-public func pure<A>(a: A) -> A? {
-	return .Some(a)
+/// Fmap | If the Optional is `.None`, ignores the function and returns `.None`. Else if the
+/// Optional is `.Some`, applies the function to its value and returns the result in a new `.Some`.
+public func <^> <A, B>(f : A -> B, a : A?) -> B? {
+	return a.map(f)
 }
 
-/// Fmap | If the Optional is None, ignores the function and returns None. If the Optional is Some, 
-/// applies the function to the Some value and returns the result in a new Some.
-public func <^> <A, B>(f: A -> B, a: A?) -> B? {
-	if let x = a {
-		return (f(x))
-	} else {
-		return .None
-	}
+/// Ap | Returns the result of applying the given Optional function to a given Optional value.  If
+/// the function and value both exist the result is the function applied to the value.  Else the
+/// result is `.None`.
+///
+/// Promotes function application to an Optional function applied to an Optional value.
+public func <*> <A, B>(f : (A -> B)?, a : A?) -> B? {
+	return f.flatMap({ a.map($0) })
 }
 
-/// Ap | Given an Optional<A -> B> and an Optional<A>, returns an Optional<B>. If the `f` or `a'
-/// param is None, simply returns None. Otherwise the function taken from Some(f) is applied to the 
-/// value from Some(a) and a Some is returned.
-public func <*> <A, B>(f: (A -> B)?, a: A?) -> B? {
-	if f != nil && a != nil {
-		return (f!(a!))
-	} else {
-		return .None
-	}
-}
-
-/// Bind | Given an Optional<A>, and a function from A -> Optional<B>, applies the function `f` if 
-/// `a` is Some, otherwise the function is ignored and None is returned.
-public func >>- <A, B>(a: A?, f: A -> B?) -> B? {
-	if let x = a {
-		return f(x)
-	} else {
-		return .None
-	}
+/// Bind | Returns the result of applying a function return an Optional to an Optional value.  If
+/// the value is `.None` the result of this function is `.None`.  If the value is `.Some`, the
+/// result is the application of the function to the value contained within.
+///
+/// Bind propagates any occurance of `.None` through a computation that may fail at several points.
+public func >>- <A, B>(a : A?, f : A -> B?) -> B? {
+	return a.flatMap(f)
 }

@@ -7,10 +7,8 @@
 //
 
 /// Immediately terminates the program with an error message.
-///
-/// TODO: Find a way to silence this warning [-wunreachable-code]
 public func error<A>(x : String) -> A {
-    fatalError(x)
+	fatalError(x)
 }
 
 /// A special case of error.
@@ -24,8 +22,6 @@ public func error<A>(x : String) -> A {
 ///     public func sortBy<A>(cmp : (A, A) -> Bool)(l : [A]) -> [A] {
 ///         return undefined()
 ///     }
-///
-/// The same caveat about compilation modes applies to "undefined" as to "error".
 public func undefined<A>() -> A {
 	return error("Undefined")
 }

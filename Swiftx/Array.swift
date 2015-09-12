@@ -6,35 +6,22 @@
 //  Copyright (c) 2014 Maxwell Swadling. All rights reserved.
 //
 
-/// Lifts a value into an Array.
-public func pure<A>(a: A) -> [A] {
-	return [a]
+/// Fmap | Returns a new list of elements obtained by applying the given function to the entirety of
+/// the given list of elements in order.
+public func <^> <A, B>(f : A -> B, xs : [A]) -> [B] {
+	return xs.map(f)
 }
 
-/// Fmap | Maps a function over the contents of an array and returns a new array of the resulting
-/// values.
-public func <^> <A, B>(f: A -> B, a: [A]) -> [B] {
-	return a.map(f)
+/// Ap | Returns the result of applying each element of the given array of functions to the entirety
+/// of the list of elements, repeating until the list of functions has been exhausted.
+///
+/// Promotes function application to arrays of functions applied to arrays of elements.
+public func <*> <A, B>(fs : [(A -> B)], xs : [A]) -> [B] {
+	return fs.flatMap({ xs.map($0) })
 }
 
-/// Ap | Given an [A -> B] and an [A], returns a [B]. Applies the function at each index in `f` to 
-/// every index in `a` and returns the results in a new array.
-public func <*> <A, B>(f: [(A -> B)], a: [A]) -> [B] {
-	var re = [B]()
-	for g in f {
-		for h in a {
-			re.append(g(h))
-		}
-	}
-	return re
-}
-
-/// Bind | Given an [A], and a function from A -> [B], applies the function `f` to every element in
-/// [A] and returns the result.
-public func >>- <A, B>(a: [A], f: A -> [B]) -> [B] {
-	var re = [B]()
-	for x in a {
-		re.extend(f(x))
-	}
-	return re
+/// Bind | Returns the result of mapping the given function over the given array of elements and
+/// concatenating the result.
+public func >>- <A, B>(xs : [A], f : A -> [B]) -> [B] {
+	return xs.flatMap(f)
 }
