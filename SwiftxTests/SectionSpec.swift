@@ -13,8 +13,13 @@ import SwiftCheck
 class SectionTests: XCTestCase {
 	func testBitShiftProperties() {
 		property("") <- forAll { (x : ArrayOf<Positive<Int>>, sh : Positive<Int>) in
+#if arch(i386) || arch(arm)
 			let xs = x.getArray.map { min(31, $0.getPositive) }
 			let shft = min(31, sh.getPositive)
+#else
+			let xs = x.getArray.map { min(63, $0.getPositive) }
+			let shft = min(63, sh.getPositive)
+#endif
 			return
 				xs.map(>>shft) == xs.map { x in x >> shft }
 				^&&^
@@ -22,8 +27,13 @@ class SectionTests: XCTestCase {
 		}
 
 		property("") <- forAll { (x : ArrayOf<Positive<Int>>, sh : Positive<Int>) in
+#if arch(i386) || arch(arm)
 			let xs = x.getArray.map { min(31, $0.getPositive) }
 			let shft = min(31, sh.getPositive)
+#else
+			let xs = x.getArray.map { min(63, $0.getPositive) }
+			let shft = min(63, sh.getPositive)
+#endif
 			return
 				xs.map(<<shft) == xs.map { x in x << shft }
 				^&&^
