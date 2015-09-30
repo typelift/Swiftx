@@ -71,7 +71,7 @@ func provePEqualsNP() -> Proof<P, NP> {
 System Requirements
 ===================
 
-Swiftx supports OS X 10.9+ and iOS 7.0+.
+Swiftx supports OS X 10.9+ and iOS 8.0+.
 
 License
 =======
