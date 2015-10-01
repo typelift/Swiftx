@@ -34,7 +34,7 @@ Swiftx provides a number of common data types and abstractions any codebase can 
 
 A small example:
 
-```swiftz
+```swift
 import Swiftx
 
 let str : String? = .Some("Hello ")
@@ -44,7 +44,7 @@ let greeting = (+"World") <^> str // .Some("Hello World")
 Seamless interaction with existing platform libraries is also possible with
 minimal effort:
 
-```swiftz
+```swift
 import Foundation
 import struct Swiftx.Result
 
@@ -58,7 +58,7 @@ let result : Result<[String]> = from({ ep in
 
 Swiftx can even help with expressions of nothingness or errors:
 
-```swiftz
+```swift
 import Swiftx
 
 /// We may not be able to do what we said we'd do, but this definition compiles. At runtime, 
