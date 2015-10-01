@@ -16,4 +16,5 @@ script:
     - set -o pipefail
     - if [[ "$TEST_CONFIG" == "RELEASE" ]]; then xcodebuild -project Swiftx.xcodeproj -scheme Swiftx -sdk macosx ONLY_ACTIVE_ARCH=NO clean build test | xcpretty -c -f `xcpretty-travis-formatter`; fi
     - if [[ "$TEST_CONFIG" == "RELEASE" ]]; then xcodebuild -project Swiftx.xcodeproj -scheme Swiftx-iOS -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO clean build test | xcpretty -c -f `xcpretty-travis-formatter`; fi
-    - if [[ "$TEST_CONFIG" == "CARTHAGE" ]]; then carthage update --verbose --no-use-binaries && carthage build --no-skip-current; fi
+    - if [[ "$TEST_CONFIG" == "CARTHAGE" ]]; then carthage update --verbose --no-use-binaries --configuration Debug && carthage build --no-skip-current; fi
+
