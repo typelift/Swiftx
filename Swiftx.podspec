@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name        = "Swiftx"
-    s.version     = "0.3.0"
+    s.version     = "0.3.1"
     s.summary     = "Functional data types and functions for any project."
     s.homepage    = "https://github.com/typelift/Swiftx"
     s.license     = { :type => "MIT", :text => <<-LICENSE
