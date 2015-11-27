@@ -46,21 +46,27 @@ public enum Either<L, R> {
 
 	/// Determines if this `Either` value is a `Left`.
 	public var isLeft : Bool {
-		switch self {
-		case Left(_):
-			return true
-		case Right(_):
-			return false
-		}
+		return left != nil
 	}
-
+	
 	/// Determines if this `Either` value is a `Right`.
 	public var isRight : Bool {
+		return right != nil
+	}
+	
+	/// Returns the value of `Right` if it exists otherwise nil.
+	public var right : R? {
 		switch self {
-		case Right(_):
-			return true
-		case Left(_):
-			return false
+		case .Right(let r): return r
+		default: return nil
+		}
+	}
+	
+	/// Returns the value of `Left` if it exists otherwise nil.
+	public var left : L? {
+		switch self {
+		case .Left(let l): return l
+		default: return nil
 		}
 	}
 }
