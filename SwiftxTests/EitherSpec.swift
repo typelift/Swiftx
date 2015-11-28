@@ -56,6 +56,10 @@ class EitherSpec : XCTestCase {
 		property("isRight behaves") <- forAllShrink(Either<Int, Int>.arbitrary, shrinker: Either.shrink) { e in
 			return e.isRight == e.fold(false, f: const(true))
 		}
+		
+		property("left and right behave") <- forAllShrink(Either<Int, Int>.arbitrary, shrinker: Either.shrink) { e in
+			return (e.isLeft && e.left != nil) || (e.isRight && e.right != nil)
+		}
 
 		property("either is equivalent to explicit case analysis") <- forAllShrink(Either<Int, Int>.arbitrary, shrinker: Either.shrink) { e in
 			return forAll { (f : ArrowOf<Int, String>) in
