@@ -84,6 +84,13 @@
 			remoteGlobalIDString = 8240CCBA1C3A123700EF4D29;
 			remoteInfo = "SwiftCheck-tvOSTests";
 		};
+		8240CDCE1C3A401500EF4D29 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 82E51B831B5D4B8B003CA361 /* SwiftCheck.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8240CCB01C3A123600EF4D29;
+			remoteInfo = "SwiftCheck-tvOS";
+		};
 		82E51B8A1B5D4B8B003CA361 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 82E51B831B5D4B8B003CA361 /* SwiftCheck.xcodeproj */;
@@ -413,6 +420,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				8240CDCF1C3A401500EF4D29 /* PBXTargetDependency */,
 				8240CD8D1C3A39D500EF4D29 /* PBXTargetDependency */,
 			);
 			name = "Swiftx-tvOSTests";
@@ -769,6 +777,11 @@
 			isa = PBXTargetDependency;
 			target = 8240CD801C3A39D500EF4D29 /* Swiftx-tvOS */;
 			targetProxy = 8240CD8C1C3A39D500EF4D29 /* PBXContainerItemProxy */;
+		};
+		8240CDCF1C3A401500EF4D29 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "SwiftCheck-tvOS";
+			targetProxy = 8240CDCE1C3A401500EF4D29 /* PBXContainerItemProxy */;
 		};
 		82E51B931B5D4B99003CA361 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
