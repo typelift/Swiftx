@@ -35,7 +35,6 @@ Pod::Spec.new do |s|
     s.ios.deployment_target = "8.0"
     s.tvos.deployment_target = "9.1"
     s.watchos.deployment_target = "2.1"
-    s.framework = "XCTest"
     s.source   = { :git => "https://github.com/typelift/Swiftx.git", :tag => "v#{s.version}", :submodules => true }
     s.source_files = "Swiftx/*.swift", "Carthage/Checkouts/Operadics/*.swift"
 end

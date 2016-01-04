@@ -30,6 +30,7 @@
 		8240CDBE1C3A3A0F00EF4D29 /* SectionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A88D341A70BF4C003D53CF /* SectionSpec.swift */; };
 		8240CDBF1C3A3A0F00EF4D29 /* EitherSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E51B591B5AFBA7003CA361 /* EitherSpec.swift */; };
 		8240CDC01C3A3AB500EF4D29 /* Swiftx.h in Headers */ = {isa = PBXBuildFile; fileRef = 84A88D071A70BDDA003D53CF /* Swiftx.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8240CDCB1C3A3DCF00EF4D29 /* SwiftCheck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8240CD9B1C3A39D600EF4D29 /* SwiftCheck.framework */; };
 		82E51B5C1B5AFBAA003CA361 /* EitherSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E51B591B5AFBA7003CA361 /* EitherSpec.swift */; };
 		82E51B5D1B5AFBAB003CA361 /* EitherSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E51B591B5AFBA7003CA361 /* EitherSpec.swift */; };
 		82E51B941B5D4B9D003CA361 /* SwiftCheck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82E51B8B1B5D4B8B003CA361 /* SwiftCheck.framework */; };
@@ -202,6 +203,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8240CDCB1C3A3DCF00EF4D29 /* SwiftCheck.framework in Frameworks */,
 				8240CD8B1C3A39D500EF4D29 /* Swiftx.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
