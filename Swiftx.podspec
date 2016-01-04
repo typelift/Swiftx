@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name        = "Swiftx"
-    s.version     = "0.3.1"
+    s.version     = "0.3.2"
     s.summary     = "Functional data types and functions for any project."
     s.homepage    = "https://github.com/typelift/Swiftx"
     s.license     = { :type => "MIT", :text => <<-LICENSE
@@ -33,7 +33,8 @@ Pod::Spec.new do |s|
     s.requires_arc = true
     s.osx.deployment_target = "10.9"
     s.ios.deployment_target = "8.0"
-    s.framework = "XCTest"
+    s.tvos.deployment_target = "9.1"
+    s.watchos.deployment_target = "2.1"
     s.source   = { :git => "https://github.com/typelift/Swiftx.git", :tag => "v#{s.version}", :submodules => true }
     s.source_files = "Swiftx/*.swift", "Carthage/Checkouts/Operadics/*.swift"
 end
