@@ -1095,14 +1095,6 @@ public prefix func == <T>(rhs : UnsafePointer<T>) -> UnsafePointer<T> -> Bool {
 	return { lhs in lhs == rhs }
 }
 
-public postfix func ==(lhs : Bit) -> Bit -> Bool {
-	return { rhs in lhs == rhs }
-}
-
-public prefix func ==(rhs : Bit) -> Bit -> Bool {
-	return { lhs in lhs == rhs }
-}
-
 public postfix func ==(lhs : UInt) -> UInt -> Bool {
 	return { rhs in lhs == rhs }
 }
@@ -1400,14 +1392,6 @@ public postfix func == <I>(lhs : ReverseRandomAccessIndex<I>) -> ReverseRandomAc
 	return { rhs in lhs == rhs }
 }
 
-public prefix func == <T : _Strideable>(y : T) -> T -> Bool {
-	return { x in x == y }
-}
-
-public postfix func == <T : _Strideable>(x : T) -> T -> Bool {
-	return { y in x == y }
-}
-
 public postfix func ==(lhs : String) -> String -> Bool {
 	return { rhs in lhs == rhs }
 }
@@ -1488,14 +1472,6 @@ public postfix func != <T>(lhs : UnsafePointer<T>) -> UnsafePointer<T> -> Bool {
 }
 
 public prefix func != <T>(rhs : UnsafePointer<T>) -> UnsafePointer<T> -> Bool {
-	return { lhs in lhs != rhs }
-}
-
-public postfix func !=(lhs : Bit) -> Bit -> Bool {
-	return { rhs in lhs != rhs }
-}
-
-public prefix func !=(rhs : Bit) -> Bit -> Bool {
 	return { lhs in lhs != rhs }
 }
 
@@ -2057,10 +2033,6 @@ public prefix func >(rhs : UInt64) -> UInt64 -> Bool {
 	return { lhs in lhs > rhs }
 }
 
-public prefix func >(rhs : Bit) -> Bit -> Bool {
-	return { lhs in lhs > rhs }
-}
-
 public prefix func > <T>(rhs : UnsafePointer<T>) -> UnsafePointer<T> -> Bool {
 	return { lhs in lhs > rhs }
 }
@@ -2159,10 +2131,6 @@ public postfix func <(lhs : Int32) -> Int32 -> Bool {
 }
 
 public postfix func <(lhs : UInt64) -> UInt64 -> Bool {
-	return { rhs in lhs < rhs }
-}
-
-public postfix func <(lhs : Bit) -> Bit -> Bool {
 	return { rhs in lhs < rhs }
 }
 
