@@ -8,7 +8,7 @@
 
 /// Fmap | Returns a new list of elements obtained by applying the given function to the entirety of
 /// the given list of elements in order.
-public func <^> <A, B>(f : A -> B, xs : [A]) -> [B] {
+public func <^> <A, B>(f : (A) -> B, xs : [A]) -> [B] {
 	return xs.map(f)
 }
 
@@ -16,12 +16,12 @@ public func <^> <A, B>(f : A -> B, xs : [A]) -> [B] {
 /// of the list of elements, repeating until the list of functions has been exhausted.
 ///
 /// Promotes function application to arrays of functions applied to arrays of elements.
-public func <*> <A, B>(fs : [(A -> B)], xs : [A]) -> [B] {
+public func <*> <A, B>(fs : [((A) -> B)], xs : [A]) -> [B] {
 	return fs.flatMap({ xs.map($0) })
 }
 
 /// Bind | Returns the result of mapping the given function over the given array of elements and
 /// concatenating the result.
-public func >>- <A, B>(xs : [A], f : A -> [B]) -> [B] {
+public func >>- <A, B>(xs : [A], f : (A) -> [B]) -> [B] {
 	return xs.flatMap(f)
 }
