@@ -45,7 +45,8 @@ matrix:
         - tar xzf swift-3.0-PREVIEW-6-ubuntu14.04.tar.gz
         - export PATH=${PWD}/swift-3.0-PREVIEW-6-ubuntu14.04/usr/bin:"${PATH}"
       script:
-        - swift build
+        # Uncomment when releasing Swift 3.0
+        # - swift build
 notifications:
   webhooks:
     urls:
