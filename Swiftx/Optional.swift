@@ -8,7 +8,7 @@
 
 /// Fmap | If the Optional is `.None`, ignores the function and returns `.None`. Else if the
 /// Optional is `.Some`, applies the function to its value and returns the result in a new `.Some`.
-public func <^> <A, B>(f : A -> B, a : A?) -> B? {
+public func <^> <A, B>(f : (A) -> B, a : A?) -> B? {
 	return a.map(f)
 }
 
@@ -17,7 +17,7 @@ public func <^> <A, B>(f : A -> B, a : A?) -> B? {
 /// result is `.None`.
 ///
 /// Promotes function application to an Optional function applied to an Optional value.
-public func <*> <A, B>(f : (A -> B)?, a : A?) -> B? {
+public func <*> <A, B>(f : ((A) -> B)?, a : A?) -> B? {
 	return f.flatMap { $0 <^> a }
 }
 
@@ -26,6 +26,6 @@ public func <*> <A, B>(f : (A -> B)?, a : A?) -> B? {
 /// result is the application of the function to the value contained within.
 ///
 /// Bind propagates any occurance of `.None` through a computation that may fail at several points.
-public func >>- <A, B>(a : A?, f : A -> B?) -> B? {
+public func >>- <A, B>(a : A?, f : (A) -> B?) -> B? {
 	return a.flatMap(f)
 }

@@ -14,7 +14,6 @@
 		8240CDAE1C3A3A0300EF4D29 /* Combinators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A88CED1A70BDB9003D53CF /* Combinators.swift */; };
 		8240CDAF1C3A3A0300EF4D29 /* Nothing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A88CEF1A70BDB9003D53CF /* Nothing.swift */; };
 		8240CDB01C3A3A0300EF4D29 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822A5FBC1B4CC78A00F48B0B /* Operators.swift */; };
-		8240CDB11C3A3A0300EF4D29 /* Sections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A88CF31A70BDB9003D53CF /* Sections.swift */; };
 		8240CDB21C3A3A0400EF4D29 /* Either.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A88CEB1A70BDB9003D53CF /* Either.swift */; };
 		8240CDB31C3A3A0400EF4D29 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A88CE91A70BDB9003D53CF /* Array.swift */; };
 		8240CDB41C3A3A0400EF4D29 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A88CEC1A70BDB9003D53CF /* Error.swift */; };
@@ -22,12 +21,10 @@
 		8240CDB61C3A3A0A00EF4D29 /* Combinators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A88CED1A70BDB9003D53CF /* Combinators.swift */; };
 		8240CDB71C3A3A0A00EF4D29 /* Nothing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A88CEF1A70BDB9003D53CF /* Nothing.swift */; };
 		8240CDB81C3A3A0A00EF4D29 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822A5FBC1B4CC78A00F48B0B /* Operators.swift */; };
-		8240CDB91C3A3A0A00EF4D29 /* Sections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A88CF31A70BDB9003D53CF /* Sections.swift */; };
 		8240CDBA1C3A3A0A00EF4D29 /* Either.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A88CEB1A70BDB9003D53CF /* Either.swift */; };
 		8240CDBB1C3A3A0A00EF4D29 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A88CE91A70BDB9003D53CF /* Array.swift */; };
 		8240CDBC1C3A3A0A00EF4D29 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A88CEC1A70BDB9003D53CF /* Error.swift */; };
 		8240CDBD1C3A3A0A00EF4D29 /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A88CF11A70BDB9003D53CF /* Optional.swift */; };
-		8240CDBE1C3A3A0F00EF4D29 /* SectionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A88D341A70BF4C003D53CF /* SectionSpec.swift */; };
 		8240CDBF1C3A3A0F00EF4D29 /* EitherSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E51B591B5AFBA7003CA361 /* EitherSpec.swift */; };
 		8240CDC01C3A3AB500EF4D29 /* Swiftx.h in Headers */ = {isa = PBXBuildFile; fileRef = 84A88D071A70BDDA003D53CF /* Swiftx.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8240CDCB1C3A3DCF00EF4D29 /* SwiftCheck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8240CD9B1C3A39D600EF4D29 /* SwiftCheck.framework */; };
@@ -46,20 +43,16 @@
 		84A88CFD1A70BDB9003D53CF /* Combinators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A88CED1A70BDB9003D53CF /* Combinators.swift */; };
 		84A88CFF1A70BDB9003D53CF /* Nothing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A88CEF1A70BDB9003D53CF /* Nothing.swift */; };
 		84A88D011A70BDB9003D53CF /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A88CF11A70BDB9003D53CF /* Optional.swift */; };
-		84A88D031A70BDB9003D53CF /* Sections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A88CF31A70BDB9003D53CF /* Sections.swift */; };
 		84A88D081A70BDDA003D53CF /* Swiftx.h in Headers */ = {isa = PBXBuildFile; fileRef = 84A88D071A70BDDA003D53CF /* Swiftx.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		84A88D351A70BF4C003D53CF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84A88D331A70BF4C003D53CF /* Info.plist */; };
-		84A88D451A70BFA6003D53CF /* SectionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A88D341A70BF4C003D53CF /* SectionSpec.swift */; };
 		84DF76731B0BDE0A00C912B0 /* Swiftx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84DF76681B0BDE0A00C912B0 /* Swiftx.framework */; };
 		84DF76811B0BDE4E00C912B0 /* Swiftx.h in Headers */ = {isa = PBXBuildFile; fileRef = 84A88D071A70BDDA003D53CF /* Swiftx.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		84DF76821B0BDE5400C912B0 /* Combinators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A88CED1A70BDB9003D53CF /* Combinators.swift */; };
 		84DF76831B0BDE5400C912B0 /* Nothing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A88CEF1A70BDB9003D53CF /* Nothing.swift */; };
-		84DF76851B0BDE5400C912B0 /* Sections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A88CF31A70BDB9003D53CF /* Sections.swift */; };
 		84DF76871B0BDE5400C912B0 /* Either.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A88CEB1A70BDB9003D53CF /* Either.swift */; };
 		84DF76891B0BDE5400C912B0 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A88CE91A70BDB9003D53CF /* Array.swift */; };
 		84DF768A1B0BDE5400C912B0 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A88CEC1A70BDB9003D53CF /* Error.swift */; };
 		84DF768B1B0BDE5400C912B0 /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A88CF11A70BDB9003D53CF /* Optional.swift */; };
-		84DF768C1B0BDE9700C912B0 /* SectionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A88D341A70BF4C003D53CF /* SectionSpec.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -190,10 +183,8 @@
 		84A88CEE1A70BDB9003D53CF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84A88CEF1A70BDB9003D53CF /* Nothing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nothing.swift; sourceTree = "<group>"; usesTabs = 1; };
 		84A88CF11A70BDB9003D53CF /* Optional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Optional.swift; sourceTree = "<group>"; usesTabs = 1; };
-		84A88CF31A70BDB9003D53CF /* Sections.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sections.swift; sourceTree = "<group>"; usesTabs = 1; };
 		84A88D071A70BDDA003D53CF /* Swiftx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Swiftx.h; path = Swiftx/Swiftx.h; sourceTree = "<group>"; usesTabs = 1; };
 		84A88D331A70BF4C003D53CF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = SwiftxTests/Info.plist; sourceTree = "<group>"; };
-		84A88D341A70BF4C003D53CF /* SectionSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SectionSpec.swift; path = SwiftxTests/SectionSpec.swift; sourceTree = "<group>"; usesTabs = 1; };
 		84DF76681B0BDE0A00C912B0 /* Swiftx.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Swiftx.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84DF76721B0BDE0A00C912B0 /* Swiftx-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Swiftx-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -301,7 +292,6 @@
 				84A88CED1A70BDB9003D53CF /* Combinators.swift */,
 				84A88CEF1A70BDB9003D53CF /* Nothing.swift */,
 				822A5FBC1B4CC78A00F48B0B /* Operators.swift */,
-				84A88CF31A70BDB9003D53CF /* Sections.swift */,
 				84A88D2B1A70BEE0003D53CF /* Data */,
 				84A88D2C1A70BEEA003D53CF /* Stdlib */,
 				84A88D091A70BDDD003D53CF /* Supporting Files */,
@@ -338,7 +328,6 @@
 		84A88D2E1A70BF0A003D53CF /* SwiftxTests */ = {
 			isa = PBXGroup;
 			children = (
-				84A88D341A70BF4C003D53CF /* SectionSpec.swift */,
 				82E51B591B5AFBA7003CA361 /* EitherSpec.swift */,
 				84A88D371A70BF4F003D53CF /* Supporting Files */,
 			);
@@ -529,7 +518,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = TypeLift;
 				TargetAttributes = {
 					8240CD801C3A39D500EF4D29 = {
@@ -543,15 +532,19 @@
 					};
 					84A88C881A70BD71003D53CF = {
 						CreatedOnToolsVersion = 6.2;
+						LastSwiftMigration = 0800;
 					};
 					84A88C931A70BD71003D53CF = {
 						CreatedOnToolsVersion = 6.2;
+						LastSwiftMigration = 0800;
 					};
 					84DF76671B0BDE0A00C912B0 = {
 						CreatedOnToolsVersion = 6.4;
+						LastSwiftMigration = 0800;
 					};
 					84DF76711B0BDE0A00C912B0 = {
 						CreatedOnToolsVersion = 6.4;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -690,7 +683,6 @@
 				8240CDAE1C3A3A0300EF4D29 /* Combinators.swift in Sources */,
 				8240CDAF1C3A3A0300EF4D29 /* Nothing.swift in Sources */,
 				8240CDB01C3A3A0300EF4D29 /* Operators.swift in Sources */,
-				8240CDB11C3A3A0300EF4D29 /* Sections.swift in Sources */,
 				8240CDB21C3A3A0400EF4D29 /* Either.swift in Sources */,
 				8240CDB31C3A3A0400EF4D29 /* Array.swift in Sources */,
 				8240CDB41C3A3A0400EF4D29 /* Error.swift in Sources */,
@@ -702,7 +694,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8240CDBE1C3A3A0F00EF4D29 /* SectionSpec.swift in Sources */,
 				8240CDBF1C3A3A0F00EF4D29 /* EitherSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -714,7 +705,6 @@
 				8240CDB61C3A3A0A00EF4D29 /* Combinators.swift in Sources */,
 				8240CDB71C3A3A0A00EF4D29 /* Nothing.swift in Sources */,
 				8240CDB81C3A3A0A00EF4D29 /* Operators.swift in Sources */,
-				8240CDB91C3A3A0A00EF4D29 /* Sections.swift in Sources */,
 				8240CDBA1C3A3A0A00EF4D29 /* Either.swift in Sources */,
 				8240CDBB1C3A3A0A00EF4D29 /* Array.swift in Sources */,
 				8240CDBC1C3A3A0A00EF4D29 /* Error.swift in Sources */,
@@ -729,7 +719,6 @@
 				84A88CFC1A70BDB9003D53CF /* Error.swift in Sources */,
 				84A88CFF1A70BDB9003D53CF /* Nothing.swift in Sources */,
 				84A88CF91A70BDB9003D53CF /* Array.swift in Sources */,
-				84A88D031A70BDB9003D53CF /* Sections.swift in Sources */,
 				84A88CFB1A70BDB9003D53CF /* Either.swift in Sources */,
 				84A88CFD1A70BDB9003D53CF /* Combinators.swift in Sources */,
 				84A88D011A70BDB9003D53CF /* Optional.swift in Sources */,
@@ -741,7 +730,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84A88D451A70BFA6003D53CF /* SectionSpec.swift in Sources */,
 				82E51B5D1B5AFBAB003CA361 /* EitherSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -752,7 +740,6 @@
 			files = (
 				84DF76821B0BDE5400C912B0 /* Combinators.swift in Sources */,
 				84DF76831B0BDE5400C912B0 /* Nothing.swift in Sources */,
-				84DF76851B0BDE5400C912B0 /* Sections.swift in Sources */,
 				84DF76871B0BDE5400C912B0 /* Either.swift in Sources */,
 				84DF76891B0BDE5400C912B0 /* Array.swift in Sources */,
 				84DF768A1B0BDE5400C912B0 /* Error.swift in Sources */,
@@ -765,7 +752,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84DF768C1B0BDE9700C912B0 /* SectionSpec.swift in Sources */,
 				82E51B5C1B5AFBAA003CA361 /* EitherSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -809,6 +795,7 @@
 		8240CD921C3A39D600EF4D29 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -824,6 +811,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.1;
 			};
@@ -832,6 +820,7 @@
 		8240CD931C3A39D600EF4D29 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -846,6 +835,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.1;
 				VALIDATE_PRODUCT = YES;
@@ -863,6 +853,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.typelift.Swiftx-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
+				SWIFT_VERSION = 3.0;
 				TVOS_DEPLOYMENT_TARGET = 9.1;
 			};
 			name = Debug;
@@ -877,6 +868,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.typelift.Swiftx-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
+				SWIFT_VERSION = 3.0;
 				TVOS_DEPLOYMENT_TARGET = 9.1;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -885,6 +877,7 @@
 		8240CDAB1C3A39F000EF4D29 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -900,6 +893,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.1;
 			};
@@ -908,6 +902,7 @@
 		8240CDAC1C3A39F000EF4D29 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -922,6 +917,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				VALIDATE_PRODUCT = YES;
 				WATCHOS_DEPLOYMENT_TARGET = 2.1;
@@ -942,8 +938,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
@@ -952,6 +950,7 @@
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -988,8 +987,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
@@ -998,6 +999,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -1007,6 +1009,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -1027,6 +1030,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.typelift.(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -1045,6 +1049,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.typelift.(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -1065,6 +1070,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.maxs.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -1081,13 +1087,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.maxs.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		84DF767C1B0BDE0A00C912B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1106,6 +1113,7 @@
 				PRODUCT_NAME = Swiftx;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1113,7 +1121,7 @@
 		84DF767D1B0BDE0A00C912B0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1127,6 +1135,7 @@
 				PRODUCT_NAME = Swiftx;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1150,6 +1159,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "io.maxs.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -1166,6 +1176,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "io.maxs.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 3.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
