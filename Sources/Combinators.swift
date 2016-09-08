@@ -125,7 +125,7 @@ public func |*| <A, B, C>(o : @escaping (B, B) -> C, f : @escaping (A) -> B) -> 
 /// left to the result of both prior applications.
 ///
 ///    (+) |*| f = { x in { y in f(x) + f(y) } }
-public func on<A, B, C>(_ o : @escaping (B) -> @escaping (B) -> C) -> (@escaping (A) -> B) -> (A) -> (A) -> C {
+public func on<A, B, C>(_ o : @escaping (B) -> (B) -> C) -> (@escaping (A) -> B) -> (A) -> (A) -> C {
 	return { f in { x in { y in o(f(x))(f(y)) } } }
 }
 
