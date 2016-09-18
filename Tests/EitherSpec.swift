@@ -13,12 +13,12 @@ import SwiftCheck
 extension Either where L : Arbitrary, R : Arbitrary {
 	static var arbitrary : Gen<Either<L, R>> {
 		return Gen.oneOf([
-			Either.Left <^> L.arbitrary,
-			Either.Right <^> R.arbitrary,
+			L.arbitrary.map(Either.Left),
+			R.arbitrary.map(Either.Right),
 		])
 	}
 
-	static func shrink(e : Either<L, R>) -> [Either<L, R>] {
+	static func shrink(_ e : Either<L, R>) -> [Either<L, R>] {
 		switch e {
 		case .Left(let x):
 			return L.shrink(x).map(Either.Left)
