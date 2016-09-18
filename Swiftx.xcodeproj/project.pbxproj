@@ -37,10 +37,6 @@
 		82FCDC2F1D73C3B30011C27F /* Combinators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FCDC2D1D73C3B30011C27F /* Combinators.swift */; };
 		82FCDC301D73C3B30011C27F /* Combinators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FCDC2D1D73C3B30011C27F /* Combinators.swift */; };
 		82FCDC311D73C3B30011C27F /* Combinators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FCDC2D1D73C3B30011C27F /* Combinators.swift */; };
-		82FCDC331D73C3BE0011C27F /* Nothing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FCDC321D73C3BE0011C27F /* Nothing.swift */; };
-		82FCDC341D73C3BE0011C27F /* Nothing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FCDC321D73C3BE0011C27F /* Nothing.swift */; };
-		82FCDC351D73C3BE0011C27F /* Nothing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FCDC321D73C3BE0011C27F /* Nothing.swift */; };
-		82FCDC361D73C3BE0011C27F /* Nothing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FCDC321D73C3BE0011C27F /* Nothing.swift */; };
 		82FCDC3E1D73C4330011C27F /* Swiftx.h in Headers */ = {isa = PBXBuildFile; fileRef = 82FCDC3D1D73C4330011C27F /* Swiftx.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		82FCDC3F1D73C4330011C27F /* Swiftx.h in Headers */ = {isa = PBXBuildFile; fileRef = 82FCDC3D1D73C4330011C27F /* Swiftx.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		82FCDC401D73C4330011C27F /* Swiftx.h in Headers */ = {isa = PBXBuildFile; fileRef = 82FCDC3D1D73C4330011C27F /* Swiftx.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -179,7 +175,6 @@
 		82FCDC231D73C3A50011C27F /* EitherSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EitherSpec.swift; path = Tests/EitherSpec.swift; sourceTree = "<group>"; };
 		82FCDC241D73C3A50011C27F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Tests/Info.plist; sourceTree = "<group>"; };
 		82FCDC2D1D73C3B30011C27F /* Combinators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Combinators.swift; path = Sources/Combinators.swift; sourceTree = SOURCE_ROOT; };
-		82FCDC321D73C3BE0011C27F /* Nothing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nothing.swift; path = Sources/Nothing.swift; sourceTree = SOURCE_ROOT; };
 		82FCDC371D73C3CC0011C27F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Sources/Info.plist; sourceTree = SOURCE_ROOT; };
 		82FCDC3D1D73C4330011C27F /* Swiftx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Swiftx.h; path = Carthage/Checkouts/SwiftCheck/../../../Sources/Swiftx.h; sourceTree = "<group>"; };
 		84A88C891A70BD71003D53CF /* Swiftx.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Swiftx.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -309,7 +304,6 @@
 			isa = PBXGroup;
 			children = (
 				82FCDC0F1D73C3870011C27F /* Either.swift */,
-				82FCDC321D73C3BE0011C27F /* Nothing.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -684,7 +678,6 @@
 				82FCDC301D73C3B30011C27F /* Combinators.swift in Sources */,
 				8240CDB01C3A3A0300EF4D29 /* Operators.swift in Sources */,
 				82FCDC121D73C3870011C27F /* Either.swift in Sources */,
-				82FCDC351D73C3BE0011C27F /* Nothing.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -706,7 +699,6 @@
 				82FCDC311D73C3B30011C27F /* Combinators.swift in Sources */,
 				8240CDB81C3A3A0A00EF4D29 /* Operators.swift in Sources */,
 				82FCDC131D73C3870011C27F /* Either.swift in Sources */,
-				82FCDC361D73C3BE0011C27F /* Nothing.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -720,7 +712,6 @@
 				82FCDC2E1D73C3B30011C27F /* Combinators.swift in Sources */,
 				82FCDC101D73C3870011C27F /* Either.swift in Sources */,
 				822A5FBD1B4CC78A00F48B0B /* Operators.swift in Sources */,
-				82FCDC331D73C3BE0011C27F /* Nothing.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -742,7 +733,6 @@
 				82FCDC2F1D73C3B30011C27F /* Combinators.swift in Sources */,
 				82FCDC111D73C3870011C27F /* Either.swift in Sources */,
 				822A5FBE1B4CC78A00F48B0B /* Operators.swift in Sources */,
-				82FCDC341D73C3BE0011C27F /* Nothing.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -803,6 +793,7 @@
 				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-DXCODE_BUILD";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.typelift.Swiftx-tvOS";
 				PRODUCT_NAME = Swiftx;
 				SDKROOT = appletvos;
@@ -827,6 +818,7 @@
 				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-DXCODE_BUILD";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.typelift.Swiftx-tvOS";
 				PRODUCT_NAME = Swiftx;
 				SDKROOT = appletvos;
@@ -885,6 +877,7 @@
 				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-DXCODE_BUILD";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.typelift.Swiftx-watchOS";
 				PRODUCT_NAME = Swiftx;
 				SDKROOT = watchos;
@@ -909,6 +902,7 @@
 				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-DXCODE_BUILD";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.typelift.Swiftx-watchOS";
 				PRODUCT_NAME = Swiftx;
 				SDKROOT = watchos;
@@ -1025,6 +1019,7 @@
 				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-DXCODE_BUILD";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.typelift.(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1044,6 +1039,7 @@
 				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-DXCODE_BUILD";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.typelift.(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1107,6 +1103,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-DXCODE_BUILD";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.typelift.(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Swiftx;
 				SDKROOT = iphoneos;
@@ -1129,6 +1126,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-DXCODE_BUILD";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.typelift.(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Swiftx;
 				SDKROOT = iphoneos;
