@@ -6,6 +6,10 @@
 //  Copyright (c) 2014 Maxwell Swadling. All rights reserved.
 //
 
+#if !XCODE_BUILD
+	import Operadics
+#endif
+
 /// The `Either` type represents values with two possibilities: `.Left(L)` or `.Right(R)`.
 ///
 /// The `Either` type is right-biased by convention.  That is, the `.Left` constructor is used to

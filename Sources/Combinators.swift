@@ -6,6 +6,10 @@
 //  Copyright (c) 2014 Maxwell Swadling. All rights reserved.
 //
 
+#if !XCODE_BUILD
+	import Operadics
+#endif
+
 /// The identity function.
 public func identity<A>(_ a : A) -> A {
 	return a

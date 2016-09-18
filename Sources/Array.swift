@@ -6,6 +6,10 @@
 //  Copyright (c) 2014 Maxwell Swadling. All rights reserved.
 //
 
+#if !XCODE_BUILD
+	import Operadics
+#endif
+
 /// Fmap | Returns a new list of elements obtained by applying the given function to the entirety of
 /// the given list of elements in order.
 public func <^> <A, B>(f : (A) -> B, xs : [A]) -> [B] {
