@@ -172,7 +172,7 @@
 		82FCDC141D73C3960011C27F /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Array.swift; path = Sources/Array.swift; sourceTree = SOURCE_ROOT; };
 		82FCDC151D73C3960011C27F /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Error.swift; path = Sources/Error.swift; sourceTree = SOURCE_ROOT; };
 		82FCDC161D73C3960011C27F /* Optional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Optional.swift; path = Sources/Optional.swift; sourceTree = SOURCE_ROOT; };
-		82FCDC231D73C3A50011C27F /* EitherSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EitherSpec.swift; path = Tests/EitherSpec.swift; sourceTree = "<group>"; };
+		82FCDC231D73C3A50011C27F /* EitherSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EitherSpec.swift; path = Tests/SwiftxTests/EitherSpec.swift; sourceTree = "<group>"; };
 		82FCDC241D73C3A50011C27F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Tests/Info.plist; sourceTree = "<group>"; };
 		82FCDC2D1D73C3B30011C27F /* Combinators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Combinators.swift; path = Sources/Combinators.swift; sourceTree = SOURCE_ROOT; };
 		82FCDC371D73C3CC0011C27F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Sources/Info.plist; sourceTree = SOURCE_ROOT; };
