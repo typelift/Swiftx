@@ -10,5 +10,3 @@ let package = Package(
 	]
 )
 
-let libSwiftx = Product(name: "Swiftx", type: .Library(.Dynamic), modules: "Swiftx")
-products.append(libSwiftx)
