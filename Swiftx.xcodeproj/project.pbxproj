@@ -264,7 +264,10 @@
 				84A88D2E1A70BF0A003D53CF /* SwiftxTests */,
 				84A88C8A1A70BD71003D53CF /* Products */,
 			);
+			indentWidth = 4;
 			sourceTree = "<group>";
+			tabWidth = 4;
+			usesTabs = 1;
 		};
 		84A88C8A1A70BD71003D53CF /* Products */ = {
 			isa = PBXGroup;
