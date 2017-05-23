@@ -6,7 +6,7 @@ let package = Package(
 		Target(name: "Swiftx"),
 	],
 	dependencies: [
-		.Package(url: "https://github.com/typelift/Operadics.git", versions: Version(0,2,2)...Version(0,2,2))
+		.Package(url: "https://github.com/typelift/Operadics.git", majorVersion: 0)
 	]
 )
 
