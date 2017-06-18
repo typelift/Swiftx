@@ -10,6 +10,10 @@ import Swiftx
 import XCTest
 import SwiftCheck
 
+#if !XCODE_BUILD
+	import Operadics
+#endif
+
 extension Either where L : Arbitrary, R : Arbitrary {
 	static var arbitrary : Gen<Either<L, R>> {
 		return Gen.one(of: [
