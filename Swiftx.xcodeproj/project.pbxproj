@@ -163,7 +163,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		822A5FBC1B4CC78A00F48B0B /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Operators.swift; path = Carthage/Checkouts/Operadics/Operators.swift; sourceTree = SOURCE_ROOT; usesTabs = 1; };
+		822A5FBC1B4CC78A00F48B0B /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Operators.swift; path = Carthage/Checkouts/Operadics/Sources/Operators.swift; sourceTree = SOURCE_ROOT; usesTabs = 1; };
 		8240CD811C3A39D500EF4D29 /* Swiftx.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Swiftx.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8240CD8A1C3A39D500EF4D29 /* Swiftx-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Swiftx-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8240CDA51C3A39F000EF4D29 /* Swiftx.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Swiftx.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -260,7 +260,7 @@
 			children = (
 				82FCDC3D1D73C4330011C27F /* Swiftx.h */,
 				82E51B831B5D4B8B003CA361 /* SwiftCheck.xcodeproj */,
-				84A88CE81A70BDB9003D53CF /* Swiftx */,
+				84A88CE81A70BDB9003D53CF /* Sources */,
 				84A88D2E1A70BF0A003D53CF /* SwiftxTests */,
 				84A88C8A1A70BD71003D53CF /* Products */,
 			);
@@ -283,7 +283,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		84A88CE81A70BDB9003D53CF /* Swiftx */ = {
+		84A88CE81A70BDB9003D53CF /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				822A5FBC1B4CC78A00F48B0B /* Operators.swift */,
@@ -292,7 +292,7 @@
 				84A88D2C1A70BEEA003D53CF /* Stdlib */,
 				84A88D091A70BDDD003D53CF /* Supporting Files */,
 			);
-			path = Swiftx;
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		84A88D091A70BDDD003D53CF /* Supporting Files */ = {
