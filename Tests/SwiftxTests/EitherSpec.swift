@@ -10,12 +10,16 @@ import Swiftx
 import XCTest
 import SwiftCheck
 
+#if !XCODE_BUILD
+	import Operadics
+#endif
+
 extension Either where L : Arbitrary, R : Arbitrary {
 	static var arbitrary : Gen<Either<L, R>> {
-		return Gen.oneOf([
+		return Gen.one(of: [
 			L.arbitrary.map(Either.Left),
 			R.arbitrary.map(Either.Right),
-		])
+			])
 	}
 
 	static func shrink(_ e : Either<L, R>) -> [Either<L, R>] {
@@ -56,7 +60,7 @@ class EitherSpec : XCTestCase {
 		property("isRight behaves") <- forAllShrink(Either<Int, Int>.arbitrary, shrinker: Either.shrink) { e in
 			return e.isRight == e.fold(false, f: const(true))
 		}
-		
+
 		property("left and right behave") <- forAllShrink(Either<Int, Int>.arbitrary, shrinker: Either.shrink) { e in
 			return (e.isLeft && e.left != nil) || (e.isRight && e.right != nil)
 		}
@@ -85,4 +89,10 @@ class EitherSpec : XCTestCase {
 			}
 		}
 	}
+
+	#if !(os(macOS) || os(iOS) || os(watchOS) || os(tvOS))
+	static var allTests = testCase([
+		("testProperties", testProperties),
+	])
+	#endif
 }

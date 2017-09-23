@@ -22,7 +22,8 @@ public func <^> <A, B>(f : (A) -> B, a : A?) -> B? {
 ///
 /// Promotes function application to an Optional function applied to an Optional value.
 public func <*> <A, B>(f : ((A) -> B)?, a : A?) -> B? {
-	return f.flatMap { $0 <^> a }
+	guard let _f = f else { return .none }
+	return _f <^> a
 }
 
 /// Bind | Returns the result of applying a function return an Optional to an Optional value.  If

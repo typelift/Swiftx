@@ -1,14 +1,19 @@
+// swift-tools-version:4.0
+
 import PackageDescription
 
 let package = Package(
 	name: "Swiftx",
-	targets: [
-		Target(name: "Swiftx"),
-	],
+	products: [
+        .library(name: "Swiftx", targets: ["Swiftx"])
+    ],
 	dependencies: [
-		.Package(url: "https://github.com/typelift/Operadics.git", versions: Version(0,2,2)...Version(0,2,2))
+		.package(url: "https://github.com/typelift/Operadics.git", .branch("master")),
+		.package(url: "https://github.com/typelift/SwiftCheck.git", .branch("master"))
+	],
+	targets: [
+		.target(name: "Swiftx", dependencies: ["Operadics"]),
+        .testTarget(name: "SwiftxTests", dependencies: ["Swiftx", "SwiftCheck"]),
 	]
 )
 
-let libSwiftx = Product(name: "Swiftx", type: .Library(.Dynamic), modules: "Swiftx")
-products.append(libSwiftx)

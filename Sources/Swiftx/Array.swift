@@ -20,7 +20,7 @@ public func <^> <A, B>(f : (A) -> B, xs : [A]) -> [B] {
 /// of the list of elements, repeating until the list of functions has been exhausted.
 ///
 /// Promotes function application to arrays of functions applied to arrays of elements.
-public func <*> <A, B>(fs : [((A) -> B)], xs : [A]) -> [B] {
+public func <*> <A, B>(fs : [(A) -> B], xs : [A]) -> [B] {
 	return fs.flatMap({ xs.map($0) })
 }
 
