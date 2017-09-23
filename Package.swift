@@ -8,8 +8,8 @@ let package = Package(
         .library(name: "Swiftx", targets: ["Swiftx"])
     ],
 	dependencies: [
-		.package(url: "https://github.com/typelift/Operadics.git", .branch("swift-develop")),
-		.package(url: "https://github.com/typelift/SwiftCheck.git", .branch("swift-develop"))
+		.package(url: "https://github.com/typelift/Operadics.git", .branch("master")),
+		.package(url: "https://github.com/typelift/SwiftCheck.git", .branch("master"))
 	],
 	targets: [
 		.target(name: "Swiftx", dependencies: ["Operadics"]),
