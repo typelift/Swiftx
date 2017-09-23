@@ -9,6 +9,9 @@
 import Swiftx
 import XCTest
 import SwiftCheck
+#if SWIFT_PACKAGE
+import Operadics
+#endif
 
 extension Either where L : Arbitrary, R : Arbitrary {
 	static var arbitrary : Gen<Either<L, R>> {
