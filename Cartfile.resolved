@@ -1,3 +1,2 @@
-github "trill-lang/FileCheck" "0.0.4"
-github "typelift/Operadics" "0.3.0"
-github "typelift/SwiftCheck" "0.9.1"
+github "typelift/Operadics" "0.4.0"
+github "typelift/SwiftCheck" "0.12.0"
