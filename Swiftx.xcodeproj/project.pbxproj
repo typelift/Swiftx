@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		8240CD8B1C3A39D500EF4D29 /* Swiftx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8240CD811C3A39D500EF4D29 /* Swiftx.framework */; };
-		8240CDCB1C3A3DCF00EF4D29 /* SwiftCheck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8240CD9B1C3A39D600EF4D29 /* SwiftCheck.framework */; };
-		82E51B941B5D4B9D003CA361 /* SwiftCheck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82E51B8B1B5D4B8B003CA361 /* SwiftCheck.framework */; };
+		826F9C16224E493B00FA5106 /* SwiftCheck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8240CD9B1C3A39D600EF4D29 /* SwiftCheck.framework */; };
+		826F9C19224E499C00FA5106 /* Swiftx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84DF76681B0BDE0A00C912B0 /* Swiftx.framework */; };
+		826F9C1B224E49D300FA5106 /* SwiftCheck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 826F9C1A224E49D300FA5106 /* SwiftCheck.framework */; };
 		82E51B961B5D4BA3003CA361 /* SwiftCheck.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 82E51B8F1B5D4B8B003CA361 /* SwiftCheck.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		82E51B971B5D4BAC003CA361 /* SwiftCheck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82E51B8B1B5D4B8B003CA361 /* SwiftCheck.framework */; };
 		82E51B981B5D4BAE003CA361 /* SwiftCheck.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 82E51B8B1B5D4B8B003CA361 /* SwiftCheck.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -47,7 +48,6 @@
 		841408BD1B1A89AD00BA2B6C /* Swiftx.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84DF76681B0BDE0A00C912B0 /* Swiftx.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8480AB371A7B232A00C6162D /* Swiftx.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84A88C891A70BD71003D53CF /* Swiftx.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		84A88C951A70BD71003D53CF /* Swiftx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A88C891A70BD71003D53CF /* Swiftx.framework */; };
-		84DF76731B0BDE0A00C912B0 /* Swiftx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84DF76681B0BDE0A00C912B0 /* Swiftx.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +79,13 @@
 			remoteGlobalIDString = 8240CCB01C3A123600EF4D29;
 			remoteInfo = "SwiftCheck-tvOS";
 		};
+		826F9C17224E497900FA5106 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 82E51B831B5D4B8B003CA361 /* SwiftCheck.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 84DF75F71B0BD54600C912B0;
+			remoteInfo = "SwiftCheck-iOS";
+		};
 		82E51B8A1B5D4B8B003CA361 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 82E51B831B5D4B8B003CA361 /* SwiftCheck.xcodeproj */;
@@ -106,13 +113,6 @@
 			proxyType = 2;
 			remoteGlobalIDString = 84DF76021B0BD54600C912B0;
 			remoteInfo = "SwiftCheck-iOSTests";
-		};
-		82E51B921B5D4B99003CA361 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 82E51B831B5D4B8B003CA361 /* SwiftCheck.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 84DF75F71B0BD54600C912B0;
-			remoteInfo = "SwiftCheck-iOS";
 		};
 		82E51B9A1B5D4BB9003CA361 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -166,6 +166,7 @@
 		8240CD811C3A39D500EF4D29 /* Swiftx.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Swiftx.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8240CD8A1C3A39D500EF4D29 /* Swiftx-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Swiftx-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8240CDA51C3A39F000EF4D29 /* Swiftx.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Swiftx.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		826F9C1A224E49D300FA5106 /* SwiftCheck.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftCheck.framework; path = "../../Library/Developer/Xcode/DerivedData/Swiftx-gvghmkefilcrbjeddxunzrknagfa/Build/Products/Debug-iphoneos/SwiftCheck.framework"; sourceTree = "<group>"; };
 		82E51B831B5D4B8B003CA361 /* SwiftCheck.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftCheck.xcodeproj; path = Carthage/Checkouts/SwiftCheck/SwiftCheck.xcodeproj; sourceTree = "<group>"; };
 		82F2D2581F765545009C32CC /* Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Operators.swift; path = Carthage/Checkouts/Operadics/Sources/Operadics/Operators.swift; sourceTree = SOURCE_ROOT; };
 		82F2D2641F76561E009C32CC /* Combinators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Combinators.swift; path = Sources/Swiftx/Combinators.swift; sourceTree = SOURCE_ROOT; };
@@ -195,7 +196,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8240CDCB1C3A3DCF00EF4D29 /* SwiftCheck.framework in Frameworks */,
+				826F9C16224E493B00FA5106 /* SwiftCheck.framework in Frameworks */,
 				8240CD8B1C3A39D500EF4D29 /* Swiftx.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -234,14 +235,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82E51B941B5D4B9D003CA361 /* SwiftCheck.framework in Frameworks */,
-				84DF76731B0BDE0A00C912B0 /* Swiftx.framework in Frameworks */,
+				826F9C19224E499C00FA5106 /* Swiftx.framework in Frameworks */,
+				826F9C1B224E49D300FA5106 /* SwiftCheck.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		826F9C15224E493B00FA5106 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				826F9C1A224E49D300FA5106 /* SwiftCheck.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		82E51B841B5D4B8B003CA361 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -263,6 +272,7 @@
 				84A88CE81A70BDB9003D53CF /* Swiftx */,
 				84A88D2E1A70BF0A003D53CF /* SwiftxTests */,
 				84A88C8A1A70BD71003D53CF /* Products */,
+				826F9C15224E493B00FA5106 /* Frameworks */,
 			);
 			indentWidth = 4;
 			sourceTree = "<group>";
@@ -499,7 +509,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				82E51B931B5D4B99003CA361 /* PBXTargetDependency */,
+				826F9C18224E497900FA5106 /* PBXTargetDependency */,
 				84DF76751B0BDE0A00C912B0 /* PBXTargetDependency */,
 			);
 			name = "Swiftx-iOSTests";
@@ -514,7 +524,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = TypeLift;
 				TargetAttributes = {
 					8240CD801C3A39D500EF4D29 = {
@@ -528,28 +538,30 @@
 					};
 					84A88C881A70BD71003D53CF = {
 						CreatedOnToolsVersion = 6.2;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 1020;
 					};
 					84A88C931A70BD71003D53CF = {
 						CreatedOnToolsVersion = 6.2;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 1020;
 					};
 					84DF76671B0BDE0A00C912B0 = {
 						CreatedOnToolsVersion = 6.4;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 1020;
 					};
 					84DF76711B0BDE0A00C912B0 = {
 						CreatedOnToolsVersion = 6.4;
-						LastSwiftMigration = 0800;
+						DevelopmentTeam = D33M56YTC8;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
 			buildConfigurationList = 84A88C831A70BD71003D53CF /* Build configuration list for PBXProject "Swiftx" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 84A88C7F1A70BD71003D53CF;
 			productRefGroup = 84A88C8A1A70BD71003D53CF /* Products */;
@@ -760,10 +772,10 @@
 			name = "SwiftCheck-tvOS";
 			targetProxy = 8240CDCE1C3A401500EF4D29 /* PBXContainerItemProxy */;
 		};
-		82E51B931B5D4B99003CA361 /* PBXTargetDependency */ = {
+		826F9C18224E497900FA5106 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "SwiftCheck-iOS";
-			targetProxy = 82E51B921B5D4B99003CA361 /* PBXContainerItemProxy */;
+			targetProxy = 826F9C17224E497900FA5106 /* PBXContainerItemProxy */;
 		};
 		82E51B9B1B5D4BB9003CA361 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -930,6 +942,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -987,6 +1000,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -1048,8 +1062,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.typelift.(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -1069,8 +1082,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.typelift.(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -1091,8 +1103,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.maxs.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -1109,8 +1120,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.maxs.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -1137,8 +1147,7 @@
 				PRODUCT_NAME = Swiftx;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1161,8 +1170,7 @@
 				PRODUCT_NAME = Swiftx;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1174,6 +1182,7 @@
 				APPLICATION_EXTENSION_API_ONLY = NO;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = D33M56YTC8;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -1186,8 +1195,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "io.maxs.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -1196,6 +1204,7 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = NO;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = D33M56YTC8;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = Tests/Info.plist;
@@ -1204,8 +1213,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "io.maxs.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
